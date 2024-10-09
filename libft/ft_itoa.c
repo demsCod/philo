@@ -3,86 +3,74 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibaby <ibaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mdembele <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/31 22:33:55 by ibaby             #+#    #+#             */
-/*   Updated: 2024/09/06 18:42:01 by ibaby            ###   ########.fr       */
+/*   Created: 2024/05/17 15:47:22 by mdembele          #+#    #+#             */
+/*   Updated: 2024/05/17 15:51:11 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-static int	numlen(int num)
+static char	*ft_rvtab(char *str)
 {
-	int	i;
+	int		fin;
+	int		debut;
+	char	*temp;
 
-	i = 0;
-	while (num)
+	temp = malloc(sizeof(char) * 1);
+	fin = ft_strlen(str) - 1;
+	debut = 0;
+	while (fin > debut)
 	{
-		num /= 10;
-		i++;
+		temp[0] = str[fin];
+		str[fin] = str[debut];
+		str[debut] = temp[0];
+		fin--;
+		debut++;
 	}
-	return (i);
-}
-
-static void	reversetab(char *str)
-{
-	int		i;
-	int		j;
-	char	temp;
-
-	i = 0;
-	j = ft_strlen(str) - 1;
-	while (i < j)
-	{
-		temp = str[i];
-		str[i++] = str[j];
-		str[j--] = temp;
-	}
-}
-
-void	reverse(char *str, int sign, int n)
-{
-	if (n == 0)
-	{
-		str[0] = '0';
-		str[1] = '\0';
-	}
-	else if (sign >= 0)
-		reversetab(str);
-	else
-	{
-		reversetab(str + 1);
-		str[0] = '-';
-	}
+	return (str);
 }
 
 char	*ft_itoa(int n)
 {
+	char	*itoa;
 	int		i;
-	int		sign;
-	long	c;
-	char	*str;
+	int		isneg;
 
-	sign = 1;
+	isneg = 0;
 	i = 0;
-	c = (long)n;
+	itoa = malloc(sizeof(char) * 12);
+	if (!(itoa))
+		return (NULL);
+	if (n == 0)
+	{
+		itoa[0] = '0';
+		itoa[1] = '\0';
+		return (itoa);
+	}
+	if (n == -2147483648)
+		return ("-2147483648\0");
 	if (n < 0)
 	{
-		sign = -sign;
-		c = -c;
-		i = 1;
+		n = n * (-1);
+		isneg = 1;
 	}
-	str = ft_malloc(sizeof(char) * (numlen(c) + 5));
-	if (!str)
-		return (malloc_failed("ft_itoa"), NULL);
-	while (c)
+	while (n != 0)
 	{
-		str[i++] = c % 10 + '0';
-		c /= 10;
+		itoa[i] = n % 10 + '0';
+		n = n / 10;
+		i++;
 	}
-	str[i] = '\0';
-	reverse(str, sign, n);
-	return (str);
+	if (isneg == 1)
+	{
+		itoa[i] = '-';
+		i++;
+	}
+	itoa[i] = '\0';
+	ft_rvtab(itoa);
+	return (itoa);
 }

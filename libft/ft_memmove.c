@@ -3,21 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibaby <ibaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mdembele <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/31 22:34:12 by ibaby             #+#    #+#             */
-/*   Updated: 2024/08/03 12:19:14 by ibaby            ###   ########.fr       */
+/*   Created: 2024/05/17 16:54:27 by mdembele          #+#    #+#             */
+/*   Updated: 2024/05/17 17:44:48 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 #include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *destination, const void *source, size_t size)
 {
-	unsigned char	s[8192];
+	unsigned char	tmp[size];
 
-	ft_memcpy(s, src, n);
-	ft_memcpy(dest, s, n);
-	return (dest);
+	ft_memcpy(tmp, source, size);
+	ft_memcpy(destination, tmp, size);
+	return (destination);
 }
+
+/*int main(void)
+{
+	char	src[] = "lorem ipsum dolor sit amet";
+	char	*dest;
+
+	dest = src + 1;
+	if (dest != ft_memmove(dest, src, 8))
+			write(1, "dest's adress was not returned\n", 31);
+		write(1, dest, 22);
+}
+*/

@@ -5,9 +5,11 @@ CC = cc
 FLAGS = -Wall -Werror -Wextra -g3
 
 
-LIBFTPATH = ./libft
+LIBFTPATH = ./libft 
 
-FILES = philosopher.c
+FILES = philosopher.c \
+		init_program/init.c	\
+		routine/routine.c \
 
 
 OBJ = $(FILES:.c=.o)
@@ -19,7 +21,7 @@ LIBFT = $(LIBFTPATH)/libft.a
 all : $(LIBFT) $(NAME)
 
 $(NAME) : 	$(OBJ)
-			@$(CC) $(FLAGS)  $(OBJ) $(LIBFTPATH)/libft.a  -o $(NAME)
+			@$(CC) $(FLAGS)  $(OBJ) ./libft/libft.a  -o $(NAME)
 			@echo "$(GREEN)$(NAME) done ✅$(END)"
 
 $(LIBFT) :

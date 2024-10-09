@@ -12,17 +12,43 @@
 
 #include "../philo.h"
 
+
+philo	*last_philo(philo *lst)
+{
+	while (lst->next != NULL)
+	{
+		lst = lst->next;
+	}
+	return (lst);
+}
+
+
 void	add_philo_back(philo **lst, int index)
 {
 	philo	*last;
 	philo 	*new;
 
-	philo
+	new = malloc(sizeof(philo));
+	ft_memset(new, 0, sizeof(philo));
+	new->index = index;
 	if (!*lst)
 	{
 		*lst = new;
+		printf(" o %d\n", new->index);
 		return ;
 	}
-	last = ft_lstlast(*lst);
+	last = last_philo((*lst));
 	last->next = new;
+}
+
+void print_table(philo **lst)
+{
+	philo *temp;
+
+	temp = (*lst);
+	while(temp != NULL)
+	{
+		printf("[%d]->", temp->index);
+		temp = temp->next;
+	}
 }

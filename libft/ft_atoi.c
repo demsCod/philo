@@ -3,34 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibaby <ibaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mdembele <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/31 22:33:22 by ibaby             #+#    #+#             */
-/*   Updated: 2024/06/19 22:52:45 by ibaby            ###   ########.fr       */
+/*   Created: 2024/05/17 15:37:13 by mdembele          #+#    #+#             */
+/*   Updated: 2024/05/17 15:48:33 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	sign;
-	int	number;
+#include "libft.h"
+#include <stdlib.h>
+#include <unistd.h>
 
+int	ft_atoi(char *str)
+{
+	int	signe;
+	int	nombre;
+	int	i;
+
+	signe = 1;
 	i = 0;
-	sign = 1;
-	number = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	nombre = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
-			sign = -sign;
+			signe = signe * -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		number = number * 10 + (str[i] - '0');
+		nombre = nombre * 10 + str[i] - 48;
 		i++;
 	}
-	return (number * sign);
+	return (nombre * signe);
 }

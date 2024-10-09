@@ -3,28 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibaby <ibaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mdembele <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 20:17:12 by ibaby             #+#    #+#             */
-/*   Updated: 2024/07/29 00:12:50 by ibaby            ###   ########.fr       */
+/*   Created: 2024/05/17 15:45:36 by mdembele          #+#    #+#             */
+/*   Updated: 2024/05/17 15:45:39 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
-int	ft_lstsize(t_token *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int		i;
-	t_token	*count;
+	t_list	*temp;
 
-	i = 1;
-	if (!lst)
-		return (0);
-	count = lst->next;
-	while (count)
+	temp = lst;
+	i = 0;
+	while (temp != NULL)
 	{
-		count = count->next;
-		i++;
+		++i;
+		temp = temp->next;
 	}
 	return (i);
 }

@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibaby <ibaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mdembele <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 20:20:12 by ibaby             #+#    #+#             */
-/*   Updated: 2024/07/29 15:15:35 by ibaby            ###   ########.fr       */
+/*   Created: 2024/05/17 15:46:33 by mdembele          #+#    #+#             */
+/*   Updated: 2024/05/17 16:03:07 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 #include <stdlib.h>
 
-void	ft_lstdelone(t_token *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst)
-		return ;
-	del(lst->content);
-	ft_free(lst);
+	if (lst)
+		del(lst->content);
+	free(lst);
 }

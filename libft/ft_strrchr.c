@@ -3,36 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibaby <ibaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mdembele <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/31 22:34:44 by ibaby             #+#    #+#             */
-/*   Updated: 2024/07/24 20:58:51 by ibaby            ###   ########.fr       */
+/*   Created: 2024/05/17 15:39:49 by mdembele          #+#    #+#             */
+/*   Updated: 2024/05/19 19:44:49 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
+#include <stddef.h>
+#include <stdio.h>
+#include <string.h>
 
-char	*ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*retval;
+	size_t	i;
 
-	i = 0;
-	retval = (char *)str + i;
-	while (str[i])
+	i = ft_strlen(s);
+	if (!(*s))
+		return (NULL);
+	while (i >= 0)
 	{
-		if (str[i] == (unsigned char)c)
-		{
-			retval = (char *)str + i;
-		}
-		i++;
+		if (s[i] == (char)c)
+			return ((char *)s + i);
+		i--;
 	}
-	if ((unsigned char)c == '\0')
-	{
-		retval = (char *)str + i;
-		return (retval);
-	}
-	if (*retval != (unsigned char)c)
-		return (retval = 0);
-	return (retval);
+	return (NULL);
 }

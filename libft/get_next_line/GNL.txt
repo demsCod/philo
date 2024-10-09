@@ -1,0 +1,10 @@
+Le Drop’Service est un système 
+proche de ce que l’on peut trouver au niveau commercial,
+dans lequel vous faites des ventes de services.
+À la différence près, c’est que si vous vendez des services, 
+vous ne les fournissez pas directement. Ici, vous engagez un prestataire pour le faire.
+Une fois cette démarche terminée, vous pouvez alors fournir le service au client.
+Concrètement, supposons que vous vendiez des logiciels pour 100 €. 
+Bi client achète votre service et saisit des informations sur le produit. 
+Le prestataire de conception du logiciel peut coûter 25 €, vous le payez et il donne les informations nécessaires.
+Une fois fait, vous livrez le service au client en vous faisant bi bénéfice de 75 €.

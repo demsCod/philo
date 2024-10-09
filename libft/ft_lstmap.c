@@ -3,83 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibaby <ibaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mdembele <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 20:18:25 by ibaby             #+#    #+#             */
-/*   Updated: 2024/07/29 00:12:50 by ibaby            ###   ########.fr       */
+/*   Created: 2024/05/17 15:46:07 by mdembele          #+#    #+#             */
+/*   Updated: 2024/05/17 15:46:11 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
-/*
-static void	ft_lstiter2(t_token *lst, void *(*f)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_token	*node;
+	t_list	*node;
+	t_list	*list;
 
-	node = lst;
-	while (node)
-	{
-		f(node->content);
-		node = node->next;
-	}
-}
-
-static t_token	*ft_lstdup(t_token *lst)
-{
-	t_token	*originalnode;
-	t_token	*newnode;
-	t_token	*newhead;
-
-	if (!lst)
+	if (!lst || !f || !del)
 		return (NULL);
-	if (!(newhead = ft_malloc(sizeof(t_token))))
-		return (NULL);
-	newhead = lst;
-	originalnode = lst->next;
-	while (originalnode)
-	{
-		if (!(newnode = ft_lstnew(originalnode->content)))
-			return (NULL);
-		ft_lstadd_back(&newhead, newnode);
-		originalnode = originalnode->next;
-	}
-	return (newhead);
-}
-
-t_token	*ft_lstmap(t_token *lst, void *(*f)(void *), void (*del)(void *))
-{
-	t_token	*newlist;
-
-	if (!(newlist = ft_lstdup(lst)))
-	{
-		ft_lstclear(&newlist, del);
-		return (NULL);
-	}
-	ft_lstiter2(newlist, f);
-	return (newlist);
-}
-*/
-
-t_token	*ft_lstmap(t_token *lst, void *(*f)(void *), void (*del)(void *))
-{
-	t_token	*new_lst;
-	t_token	*elem;
-
-	if (!lst)
-		return (0);
-	new_lst = 0;
+	list = NULL;
 	while (lst)
 	{
-		elem = ft_lstnew(f(lst->content));
-		if (!elem)
+		node = ft_lstnew(f(lst->content));
+		if (!node)
 		{
-			ft_lstclear(&new_lst, del);
-			return (0);
+			ft_lstclear(&list, del);
+			return (NULL);
 		}
-		ft_lstadd_back(&new_lst, elem);
+		ft_lstadd_back(&list, node);
 		lst = lst->next;
 	}
-	return (new_lst);
+	return (list);
 }

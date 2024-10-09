@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibaby <ibaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mdembele <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 20:17:37 by ibaby             #+#    #+#             */
-/*   Updated: 2024/07/31 01:54:24 by ibaby            ###   ########.fr       */
+/*   Created: 2024/05/17 15:45:51 by mdembele          #+#    #+#             */
+/*   Updated: 2024/05/17 15:45:53 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 #include <stdlib.h>
 
-t_token	*ft_lstnew(char *content)
+t_list	*ft_lstnew(void *content)
 {
-	t_token	*new;
+	t_list	*lstnew;
 
-	new = ft_calloc(1, sizeof(t_token));
-	if (!new)
+	lstnew = malloc(sizeof(t_list));
+	if (!(lstnew))
 		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	lstnew->content = content;
+	lstnew->next = NULL;
+	return (lstnew);
 }

@@ -3,24 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibaby <ibaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mdembele <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 20:20:39 by ibaby             #+#    #+#             */
-/*   Updated: 2024/07/29 00:12:50 by ibaby            ###   ########.fr       */
+/*   Created: 2024/05/17 15:46:59 by mdembele          #+#    #+#             */
+/*   Updated: 2024/05/17 16:06:48 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-void	ft_lstadd_front(t_token **lst, t_token *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!new)
-		return ;
-	if (!lst)
-	{
-		*lst = new;
-		return ;
-	}
-	new->next = *lst;
-	*lst = new;
+	if (*lst == NULL)
+		new = *lst;
+	new->next = (*lst);
 }

@@ -3,24 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibaby <ibaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mdembele <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/31 22:33:28 by ibaby             #+#    #+#             */
-/*   Updated: 2024/09/06 18:41:46 by ibaby            ###   ########.fr       */
+/*   Created: 2024/05/17 15:48:09 by mdembele          #+#    #+#             */
+/*   Updated: 2024/05/17 15:48:17 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 #include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-void	*ft_calloc(size_t el_count, size_t el_size)
+void	*ft_calloc(size_t elementCount, size_t elementSize)
 {
-	unsigned char	*buffer;
+	void	*s;
 
-	buffer = ft_malloc(el_size * el_count);
-	if (!buffer)
-		return (malloc_failed("ft_calloc"), NULL);
-	buffer = ft_memset(buffer, 0, (el_count * el_size));
-	return (buffer);
+	s = malloc(sizeof(elementSize) * elementCount);
+	if (!(s))
+		return (NULL);
+	ft_bzero(s, elementCount);
+	return (s);
 }

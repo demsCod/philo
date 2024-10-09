@@ -3,110 +3,90 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibaby <ibaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mdembele <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 20:14:21 by ibaby             #+#    #+#             */
-/*   Updated: 2024/09/08 02:59:10 by ibaby            ###   ########.fr       */
+/*   Created: 2024/05/17 15:42:59 by mdembele          #+#    #+#             */
+/*   Updated: 2024/05/17 15:43:03 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
 
-static int	count_words(const char *s, char c)
+static size_t	ft_strwordlen(char *str, char set)
 {
-	int	count;
-	int	i;
+	size_t	i;
 
-	count = 0;
 	i = 0;
-	while (s[i] == c && s[i])
-		i++;
-	while (s[i])
+	while (str[i] && str[i] != set)
 	{
-		if (s[i] == c)
-		{
-			count++;
-			while (s[i] == c)
-				i++;
-		}
-		if (s[i])
-			i++;
+		i++;
 	}
-	count++;
-	return (count);
+	return (i);
 }
 
-char	*ft_strtrim2(char const *s1, char sep)
+static size_t	ft_countword(char *str, char set)
 {
-	char	*str;
-	size_t	end;
-	size_t	start;
-
-	if (!s1)
-		return (0);
-	end = ft_strlen(s1);
-	start = 0;
-	while (s1[start] && s1[start] == sep)
-		start++;
-	while (end > start && s1[end] == sep)
-		end--;
-	str = ft_substr(s1, start, (end - start + 1));
-	return (str);
-}
-
-int	ft_split_2(const char *s, char **split, char sep, int words)
-{
-	int	i;
-	int	j;
-	int	start;
+	int		i;
+	size_t	nword;
+	int		ammo;
 
 	i = 0;
-	j = 0;
-	while (s[i] == sep)
-		i++;
-	while (j < words)
+	nword = 0;
+	ammo = 1;
+	while (str[i])
 	{
-		start = i;
-		while (s[i] != sep && s[i])
+		if (ammo == 1 && str[i] != set)
+		{
+			nword++;
+			ammo = 0;
+		}
+		if (str[i] == set)
+			ammo = 1;
+		i++;
+	}
+	return (nword);
+}
+char	**ft_split(char *str, char set)
+{
+	size_t	ntab;
+	char	**ssplit;
+	int		i;
+	int		j;
+
+	j = 0;
+	if (str == NULL)
+	{
+		ssplit = malloc(sizeof(char *));
+		if (ssplit == NULL)
+			return (NULL);
+		ssplit[0] = NULL;
+		return (NULL);
+	}
+	while (*str == set)
+		str++;
+	ntab = ft_countword(str, set);
+	ssplit = malloc((ntab + 1) * sizeof(char *));
+	if (ssplit == NULL)
+		return (NULL);
+	while (*str)
+	{
+		i = 0;
+		ssplit[j] = malloc(sizeof(char) * ft_strwordlen(str, set) + 1);
+		if (ssplit == NULL)
+			return (NULL);
+		while (*str != set && *str)
+		{
+			ssplit[j][i] = *str;
+			str++;
 			i++;
-		split[j] = ft_malloc(sizeof(char) * (i - start + 1));
-		if (!split[j])
-			return (malloc_failed("ft_split_2"), -1);
-		ft_memmove(split[j], (s + start), (i - start));
-		split[j][i - start] = '\0';
-		while (s[i] == sep)
-			i++;
+		}
+		if (*str)
+			str++;
+		ssplit[j][i] = '\0';
 		j++;
 	}
-	return (0);
-}
-
-char	**ft_split(const char *s, char sep)
-{
-	int		words;
-	char	**split;
-	int		check;
-
-	if (s == NULL)
-		return (NULL);
-	words = count_words(s, sep);
-	if (*s != '\0' && s[ft_strlen(s) - 1] == sep)
-		words--;
-	if (words < 0 || *s == '\0')
-	{
-		split = ft_malloc(sizeof(char *) * 1);
-		if (!split)
-			return (malloc_failed("ft_split"), NULL);
-		split[0] = NULL;
-		return (split);
-	}
-	split = ft_malloc(sizeof(char *) * (words + 1));
-	if (!split)
-		return (malloc_failed("ft_split"), NULL);
-	check = ft_split_2(s, split, sep, words);
-	if (check == -1)
-		return (free_2d_array((void ***)&split), NULL);
-	split[words] = NULL;
-	return (split);
+	ssplit[j] = (NULL);
+	return (ssplit);
 }

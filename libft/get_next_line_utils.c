@@ -1,29 +1,70 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ibaby <ibaby@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/29 22:20:37 by ibaby             #+#    #+#             */
-/*   Updated: 2024/06/12 16:39:03 by ibaby            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include <stddef.h>
 
-#include "get_next_line.h"
+size_t	ft_strlen(char *dest)
+{
+	size_t	i;
 
-int	is_newline(char *str)
+	i = 0;
+	while (dest[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strcat(char *dest, char *src)
+{
+	long long	i;
+	long long	j;
+
+	i = 0;
+	j = 0;
+	while (dest[i])
+		i++;
+	while (src[j])
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	return (dest);
+}
+char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
 	i = 0;
-	if (str == 0)
-		return (0);
-	while (str[i])
+	while (src[i])
 	{
-		if (str[i] == '\n')
-			return (1);
+		dest[i] = src[i];
 		i++;
 	}
-	return (0);
+	dest[i] = '\0';
+	return (dest);
 }
+
+void	ft_clean(char *victim)
+{
+	size_t	i;
+
+	i = 0;
+	while (victim[i] != '\n' && victim[i])
+	{
+		victim[i] = '\0';
+		i++;
+	}
+	ft_strcpy(victim, victim + i + 1);
+}
+
+char	*ft_cpynl(char *dest, char *src)
+{
+	size_t	i;
+
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+

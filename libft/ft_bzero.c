@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibaby <ibaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mdembele <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/31 22:33:26 by ibaby             #+#    #+#             */
-/*   Updated: 2024/07/28 23:52:00 by ibaby            ###   ########.fr       */
+/*   Created: 2024/05/17 15:48:21 by mdembele          #+#    #+#             */
+/*   Updated: 2024/05/17 15:48:22 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
-#include <stddef.h>
+#include "libft.h"
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
-void	ft_bzero(void *array, size_t lim)
+void	ft_bzero(void *s, size_t n)
 {
-	ft_memset(array, 0, lim);
+	ft_memset(s, 0, n);
 }
