@@ -26,17 +26,17 @@ void philo_action (philo *philosophe, int action, int time)
     }
     if (action == EAT)
     {
-        printf("%d %d has eating 🍝\n", time, philosophe->index);
+        printf("%d %d  is eating 🍝\n", time, philosophe->index);
         ft_usleep(philosophe->table_info->time_to_eat);
     }
     if (action == SLEEP)
     {
-        printf("%d %d has sleeping 😴\n", time, philosophe->index);
+        printf("%d %d is sleeping 😴\n", time, philosophe->index);
         ft_usleep(philosophe->table_info->time_to_sleep);
     }
     if (action == THINK)
     {
-        printf("%d %d has thinking 🤔\n", time, philosophe->index);
+        printf("%d %d is thinking 🤔\n", time, philosophe->index);
         ft_usleep(philosophe->table_info->time_to_think);
     }
 }
