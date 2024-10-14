@@ -13,17 +13,19 @@
 #include "../philo.h"
 
 
-philo	*last_philo(philo *lst)
+philo	*last_philo(philo **lst)
 {
-	while (lst->next != NULL)
+	philo *current;
+	current = (*lst);
+	while (current->next != NULL)
 	{
-		lst = lst->next;
+		current = current->next;
 	}
-	return (lst);
+	return (current);
 }
 
 
-void	add_philo_back(philo **lst, int index)
+void	add_philo_back(philo **lst, int index, t_table *table)
 {
 	philo	*last;
 	philo 	*new;
@@ -31,14 +33,30 @@ void	add_philo_back(philo **lst, int index)
 	new = malloc(sizeof(philo));
 	ft_memset(new, 0, sizeof(philo));
 	new->index = index;
+	new->table_info = table;
 	if (!*lst)
 	{
 		*lst = new;
-		printf(" o %d\n", new->index);
-		return ;
+ 		return ;
 	}
-	last = last_philo((*lst));
+	last = last_philo(lst);
 	last->next = new;
+}
+
+/*number_of_philosophers time_to_die time_to_eat
+time_to_sleep
+[number_of_times_each_philosopher_must_eat]*/
+t_table *init_table_info(char **data)
+{
+	t_table *table_info;
+
+	table_info = malloc(sizeof(t_table));
+	table_info->mutex = malloc (sizeof(t_mtx));
+	table_info->time_to_die = ft_atoi(data[1]);                             /**/
+	table_info->time_to_eat = ft_atoi(data[2]);
+	table_info->time_to_sleep = ft_atoi(data[3]);
+	pthread_mutex_init(table_info->mutex, NULL);
+	return(table_info);
 }
 
 void print_table(philo **lst)

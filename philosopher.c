@@ -18,17 +18,21 @@ int parse_data (char **data, philo **phil)
 	int number_of_philo;
 	int	index;
 	philo *last;
-	
+	void 			*rest;
+	t_table			*table;
+
+
 	index = 1;
 	number_of_philo = ft_atoi(data[0]);
-	(*phil)->number_of_philo = number_of_philo;
+	table = init_table_info(data);
 	while (number_of_philo > 0)
 	{
-		add_philo_back(phil, index);
+		add_philo_back(phil, index, table);
 		number_of_philo--;
 		index++;
 	}
-	last = last_philo(*phil);
+	(*phil)->number_of_philo = ft_atoi(data[0]);
+	last = last_philo(phil);
 	last->next = *phil;
 	return (0);
 }
