@@ -6,7 +6,7 @@
 /*   By: mdembele <mdembele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:43:04 by mdembele          #+#    #+#             */
-/*   Updated: 2024/10/09 18:47:04 by mdembele         ###   ########.fr       */
+/*   Updated: 2024/10/15 22:09:49 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ t_table *init_table_info(char **data)
 
 	table_info = malloc(sizeof(t_table));
 	ft_memset(table_info, 0, sizeof(t_table));
-	table_info->mutex = malloc (sizeof(t_mtx));
 	table_info->monitor = malloc(sizeof(pthread_t));
 	table_info->time_to_die = ft_atoi(data[1]);                             /**/
 	table_info->time_to_eat = ft_atoi(data[2]);

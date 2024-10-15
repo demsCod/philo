@@ -17,101 +17,79 @@ int	ft_usleep(size_t milliseconds)
 	return (0);
 }
 
-void philo_action (philo *philosophe, int action, int time)
+void philo_action (philo *philosophe, int action, long time)
 {
+
+	time_t temp;
 
     if (action == TAKE_FORK)
     {
-        printf("%d  %d  has taken fork 🍴\n", time, philosophe->index);
+		pthread_mutex_lock(philosophe->table_info->mutex_printf);
+		temp = get_time_in_ms() - time ;
+        printf("%ld  %d  has taken fork\n", temp,  philosophe->index);// 🍴
+		pthread_mutex_unlock(philosophe->table_info->mutex_printf);
     }
     if (action == EAT)
     {
-        printf("%d %d  is eating 🍝\n", time, philosophe->index);
+		pthread_mutex_lock(philosophe->table_info->mutex_printf);
+		temp = get_time_in_ms() - time;
+        printf("%ld %d  is eating\n", temp,  philosophe->index);//  🍝
         philosophe->last_eat = time;
+		pthread_mutex_unlock(philosophe->table_info->mutex_printf);
         ft_usleep(philosophe->table_info->time_to_eat);
     }
     if (action == SLEEP)
     {
-        printf("%d %d is sleeping 😴\n", time, philosophe->index);
+		pthread_mutex_lock(philosophe->table_info->mutex_printf);
+		temp = get_time_in_ms() - time ;
+        printf("%ld %d is sleeping\n", temp,  philosophe->index);// 😴
+		pthread_mutex_unlock(philosophe->table_info->mutex_printf);
         ft_usleep(philosophe->table_info->time_to_sleep);
     }
     if (action == THINK)
     {
-        printf("%d %d is thinking 🤔\n", time, philosophe->index);
-        ft_usleep(philosophe->table_info->time_to_think);
+		pthread_mutex_lock(philosophe->table_info->mutex_printf);
+		temp = get_time_in_ms() - time ;
+        printf("%ld %d is thinking\n", temp,  philosophe->index);// 🤔
+		pthread_mutex_unlock(philosophe->table_info->mutex_printf);
     }
 }
 
 void take_fork(philo *phil, t_mtx *mtx, time_t temp)
 {
-    int time;
-
-    time = get_time_in_ms() - temp;
-    pthread_mutex_lock(mtx);
-    philo_action(phil, TAKE_FORK, time);
-}
-
-void wait_thread(t_table *table)
-{
-    while (1)
-    {
-        pthread_mutex_lock(table->mutex);
-        if (table->thread_ready == true)
-        {
-             pthread_mutex_unlock(table->mutex);
-             break;
-        }
-        pthread_mutex_unlock(table->mutex);
-    }
+	pthread_mutex_lock(mtx);
+    philo_action(phil, TAKE_FORK, temp);
 }
 
 void *begin_routine(void *phi)
 {
     philo *philosophe;
-    struct timeval *time;
-	void 			*rest;
-    time_t res;
     time_t temp;
-    t_mtx  lock_time;
 
-
-    pthread_mutex_init(&lock_time, NULL);
-
-    temp = get_time_in_ms();
-    philosophe = (philo*)phi;
-    pthread_mutex_lock(&lock_time);
-    philosophe->table_info->time = 0;
-    pthread_mutex_unlock(&lock_time);
-    philosophe->fork = malloc(sizeof(t_mtx));
-    pthread_mutex_init(philosophe->fork, NULL);
-    wait_thread(philosophe->table_info);
+	philosophe = (philo *)phi;
+	pthread_mutex_lock(philosophe->table_info->mutex_printf);
+	pthread_mutex_unlock(philosophe->table_info->mutex_printf);
+    temp = philosophe->table_info->time;
     while (1)
     {
-        res = get_time_in_ms() - temp;
-        pthread_mutex_lock(philosophe->table_info->mutex);
-        philosophe->table_info->time = res;
-        pthread_mutex_unlock(philosophe->table_info->mutex);
-
+        philo_action(philosophe, THINK, temp);
         if (philosophe->index % 2 == 0)
         {
             take_fork(philosophe, philosophe->fork, temp);
             take_fork(philosophe, philosophe->next->fork, temp);
-            philo_action(philosophe, EAT, res);
-            pthread_mutex_unlock(philosophe->fork);
-            pthread_mutex_unlock(philosophe->next->fork);
+            philo_action(philosophe, EAT, temp);
+			pthread_mutex_unlock(philosophe->fork);
+			pthread_mutex_unlock(philosophe->next->fork);
         }
         else
         {   
             take_fork(philosophe, philosophe->next->fork, temp);
             take_fork(philosophe, philosophe->fork, temp);
-            philo_action(philosophe, EAT, res);
-            pthread_mutex_unlock(philosophe->next->fork);
-            pthread_mutex_unlock(philosophe->fork);
+            philo_action(philosophe, EAT, temp);
+			pthread_mutex_unlock(philosophe->next->fork);
+			pthread_mutex_unlock(philosophe->fork);
         }
-        res = get_time_in_ms() - temp;
-        philo_action(philosophe, SLEEP, res);
-        res = get_time_in_ms() - temp;
-        philo_action(philosophe, THINK, res);
+        philo_action(philosophe, SLEEP, temp);
     }
 }
 
@@ -121,7 +99,7 @@ bool is_died(philo *phil, t_mtx  *mtx, t_table *table)
     time_t time;
 
     time = get_time_in_ms() ;
-    //printf("%d\n", table->time);
+    //printf("%ld\n", table->time);
     pthread_mutex_lock(mtx);
     if (time - phil->last_eat > table->time_to_die)
     {
@@ -133,6 +111,7 @@ bool is_died(philo *phil, t_mtx  *mtx, t_table *table)
     return (false);
 
 }
+// add lock unlock before runnig threqd qnd printf 
 
 void *check_monitor(void *table_data)
 {
@@ -143,7 +122,8 @@ void *check_monitor(void *table_data)
     mutex = malloc(sizeof(t_mtx));
     pthread_mutex_init(mutex, NULL);
     table = (t_table *)table_data;
-    wait_thread(table);
+	pthread_mutex_lock(table->mutex_printf);
+	pthread_mutex_unlock(table->mutex_printf);
     philo_list = table->philo;
     table->time =  0;
     while (1)
@@ -168,22 +148,27 @@ int routine_philo (philo **philo_list)
     number_philo = philo->number_of_philo;
     thread_for_phil = malloc(sizeof(pthread_t) * number_philo );
     table->philo = philo;
-	pthread_mutex_init(table->mutex, NULL);
+	table->mutex_printf = malloc(sizeof(t_mtx));
+	pthread_mutex_init(table->mutex_printf, NULL);
+	pthread_mutex_lock(table->mutex_printf);
     while (number_philo > 0)
     {
+		philo->fork = malloc(sizeof(t_mtx));
+    	pthread_mutex_init(philo->fork, NULL);
         pthread_create(&thread_for_phil[i], NULL, begin_routine, philo);
         philo = philo->next;
         number_philo--;
         i++;
+		// usleep(100);
     }
-    pthread_create(table->monitor, NULL, check_monitor,  table);
-    ft_usleep(100);
-    table->thread_ready = true;
+   // pthread_create(table->monitor, NULL, check_monitor,  table);
     j = 0;
-    while(1);
+	table->time = get_time_in_ms();
+	pthread_mutex_unlock(table->mutex_printf);
     while (j < i)
     {
         pthread_join(thread_for_phil[j], NULL);
         j++;
     }
+	return (0);
 }

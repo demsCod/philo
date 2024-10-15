@@ -6,7 +6,7 @@
 /*   By: mdembele <mdembele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:02:16 by mdembele          #+#    #+#             */
-/*   Updated: 2024/10/09 18:44:15 by mdembele         ###   ########.fr       */
+/*   Updated: 2024/10/15 22:09:44 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int parse_data (char **data, philo **phil)
 	int number_of_philo;
 	int	index;
 	philo *last;
-	void 			*rest;
 	t_table			*table;
 
 

@@ -20,8 +20,8 @@ LIBFT = $(LIBFTPATH)/libft.a
 
 all : $(LIBFT) $(NAME)
 
-$(NAME) : 	$(OBJ)
-			@$(CC) $(FLAGS)  $(OBJ) ./libft/libft.a  -o $(NAME)
+$(NAME) : 	$(FILES)
+			@$(CC) $(FLAGS)  $(FILES) ./libft/libft.a  -o $(NAME)
 			@echo "$(GREEN)$(NAME) done ✅$(END)"
 
 $(LIBFT) :

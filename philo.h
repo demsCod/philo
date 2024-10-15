@@ -6,7 +6,7 @@
 /*   By: mdembele <mdembele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:27:24 by mdembele          #+#    #+#             */
-/*   Updated: 2024/10/09 18:37:57 by mdembele         ###   ########.fr       */
+/*   Updated: 2024/10/15 23:52:32 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,12 @@ typedef struct t_table
 	bool thread_ready;
 	unsigned int time_to_eat;
 	unsigned int time_to_sleep;
-	unsigned int time_to_think;
 	unsigned int time_to_die;
-	int          time;
+	time_t     time;
 	int			 limit_eat;
 	struct t_philo		*philo;
 	pthread_t	 *monitor;
-	t_mtx		 *mutex;
+	t_mtx		 *mutex_printf;
 } t_table;
 
 
