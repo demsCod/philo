@@ -51,11 +51,12 @@ t_table *init_table_info(char **data)
 	t_table *table_info;
 
 	table_info = malloc(sizeof(t_table));
+	ft_memset(table_info, 0, sizeof(t_table));
 	table_info->mutex = malloc (sizeof(t_mtx));
+	table_info->monitor = malloc(sizeof(pthread_t));
 	table_info->time_to_die = ft_atoi(data[1]);                             /**/
 	table_info->time_to_eat = ft_atoi(data[2]);
 	table_info->time_to_sleep = ft_atoi(data[3]);
-	pthread_mutex_init(table_info->mutex, NULL);
 	return(table_info);
 }
 

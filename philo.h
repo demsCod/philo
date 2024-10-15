@@ -40,16 +40,20 @@ typedef struct t_table
 	unsigned int time_to_sleep;
 	unsigned int time_to_think;
 	unsigned int time_to_die;
+	int          time;
 	int			 limit_eat;
+	struct t_philo		*philo;
+	pthread_t	 *monitor;
 	t_mtx		 *mutex;
 } t_table;
+
 
 typedef struct t_philo
 {
 	int 		index;
 	int			number_of_philo;
 	int 		eat_counters;
-	time_t	last_eat;
+	time_t		last_eat;
 	t_mtx	 	*fork;
 	t_table 	*table_info;
 	struct t_philo *next;	
