@@ -35,11 +35,13 @@ typedef pthread_mutex_t  t_mtx;
 
 typedef struct t_table
 {
-	bool thread_ready;
-	unsigned int time_to_eat;
-	unsigned int time_to_sleep;
-	unsigned int time_to_die;
+	bool end;
+	time_t time_to_eat;
+	time_t time_to_sleep;
+	time_t time_to_die;
 	time_t     time;
+	time_t time_to_think;
+	int          number_of_philo;
 	int			 limit_eat;
 	struct t_philo		*philo;
 	pthread_t	 *monitor;

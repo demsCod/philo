@@ -24,6 +24,7 @@ int parse_data (char **data, philo **phil)
 	index = 1;
 	number_of_philo = ft_atoi(data[0]);
 	table = init_table_info(data);
+	table->number_of_philo = number_of_philo;
 	while (number_of_philo > 0)
 	{
 		add_philo_back(phil, index, table);
