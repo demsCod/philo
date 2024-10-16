@@ -6,7 +6,7 @@
 /*   By: mdembele <mdembele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:27:24 by mdembele          #+#    #+#             */
-/*   Updated: 2024/10/15 23:52:32 by mdembele         ###   ########.fr       */
+/*   Updated: 2024/10/16 23:38:34 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef pthread_mutex_t  t_mtx;
 typedef struct t_table
 {
 	bool end;
+	bool extra_args;
 	time_t time_to_eat;
 	time_t time_to_sleep;
 	time_t time_to_die;
@@ -45,7 +46,8 @@ typedef struct t_table
 	int			 limit_eat;
 	struct t_philo		*philo;
 	pthread_t	 *monitor;
-	t_mtx		 *mutex_printf;
+	t_mtx		 mutex_printf;
+	t_mtx		 mutex_checking;
 } t_table;
 
 

@@ -6,7 +6,7 @@
 /*   By: mdembele <mdembele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:43:04 by mdembele          #+#    #+#             */
-/*   Updated: 2024/10/15 22:09:49 by mdembele         ###   ########.fr       */
+/*   Updated: 2024/10/16 23:07:13 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,18 +56,18 @@ t_table *init_table_info(char **data)
 	table_info->time_to_die = ft_atoi(data[1]);                             /**/
 	table_info->time_to_eat = ft_atoi(data[2]);
 	table_info->time_to_sleep = ft_atoi(data[3]);
-    if (table_info->number_of_philo % 2 == 0 && table_info->time_to_eat <= table_info->time_to_sleep)
-	    table_info->time_to_think = 0;
-	if (table_info->number_of_philo % 2 == 0 && table_info->time_to_eat > table_info->time_to_sleep)
-	    table_info->time_to_think = table_info->time_to_eat - table_info->time_to_sleep;
-	if (table_info->number_of_philo % 2 != 0 && table_info->time_to_eat == table_info->time_to_sleep)
-	    table_info->time_to_think = table_info->time_to_eat;
-	if (table_info->number_of_philo % 2 != 0 && table_info->time_to_eat < table_info->time_to_sleep)
-	    table_info->time_to_think = table_info->time_to_eat * 2 - table_info->time_to_sleep;
-	if (table_info->number_of_philo % 2 != 0 && table_info->time_to_eat > table_info->time_to_sleep)
-	    table_info->time_to_think = table_info->time_to_eat * 2 - table_info->time_to_sleep;
-	if (table_info->number_of_philo % 2 != 0 && table_info->time_to_eat == table_info->time_to_sleep)
-	    table_info->time_to_think = table_info->time_to_eat * 2 - table_info->time_to_sleep;
+    // if (table_info->number_of_philo % 2 == 0 && table_info->time_to_eat <= table_info->time_to_sleep)
+	//     table_info->time_to_think = 0;
+	// if (table_info->number_of_philo % 2 == 0 && table_info->time_to_eat > table_info->time_to_sleep)
+	//     table_info->time_to_think = table_info->time_to_eat - table_info->time_to_sleep;
+	// if (table_info->number_of_philo % 2 != 0 && table_info->time_to_eat == table_info->time_to_sleep)
+	//     table_info->time_to_think = table_info->time_to_eat;
+	// if (table_info->number_of_philo % 2 != 0 && table_info->time_to_eat < table_info->time_to_sleep)
+	//     table_info->time_to_think = table_info->time_to_eat * 2 - table_info->time_to_sleep;
+	// if (table_info->number_of_philo % 2 != 0 && table_info->time_to_eat > table_info->time_to_sleep)
+	//     table_info->time_to_think = table_info->time_to_eat * 2 - table_info->time_to_sleep;
+	// if (table_info->number_of_philo % 2 != 0 && table_info->time_to_eat == table_info->time_to_sleep)
+	//     table_info->time_to_think = table_info->time_to_eat * 2 - table_info->time_to_sleep;
 	return(table_info);
 }
 

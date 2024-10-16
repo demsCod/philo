@@ -1,5 +1,7 @@
 #include "../philo.h"
 
+int is_full(philo *philosophe);
+
 time_t	get_time_in_ms(void)
 {
 	struct timeval		tv;
@@ -22,36 +24,39 @@ void philo_action (philo *philosophe, int action, long time)
 
 	time_t temp;
 
+	if (is_full(philosophe))
+		exit(0);
     if (action == TAKE_FORK)
     {
-		pthread_mutex_lock(philosophe->table_info->mutex_printf);
+		pthread_mutex_lock(&philosophe->table_info->mutex_printf);
 		temp = get_time_in_ms() - time ;
         printf("%ld  %d  has taken a fork\n", temp,  philosophe->index);// 🍴
-		pthread_mutex_unlock(philosophe->table_info->mutex_printf);
+		pthread_mutex_unlock(&philosophe->table_info->mutex_printf);
     }
     if (action == EAT)
     {
-		pthread_mutex_lock(philosophe->table_info->mutex_printf);
+		pthread_mutex_lock(&philosophe->table_info->mutex_printf);
 		temp = get_time_in_ms() - time;
-        printf("%ld %d  is eating\n", temp,  philosophe->index);//  🍝
+		philosophe->eat_counters++;
+        printf("%ld %d  is eating {🍝 %d} \n", temp,  philosophe->index, philosophe->eat_counters);//  🍝
         philosophe->last_eat = temp;
-		pthread_mutex_unlock(philosophe->table_info->mutex_printf);
+		pthread_mutex_unlock(&philosophe->table_info->mutex_printf);
         ft_usleep(philosophe->table_info->time_to_eat);
     }
     if (action == SLEEP)
     {
-		pthread_mutex_lock(philosophe->table_info->mutex_printf);
+		pthread_mutex_lock(&philosophe->table_info->mutex_printf);
 		temp = get_time_in_ms() - time ;
         printf("%ld %d is sleeping\n", temp,  philosophe->index);// 😴
-		pthread_mutex_unlock(philosophe->table_info->mutex_printf);
+		pthread_mutex_unlock(&philosophe->table_info->mutex_printf);
         ft_usleep(philosophe->table_info->time_to_sleep);
     }
     if (action == THINK)
     {
-		pthread_mutex_lock(philosophe->table_info->mutex_printf);
+		pthread_mutex_lock(&philosophe->table_info->mutex_printf);
 		temp = get_time_in_ms() - time ;
         printf("%ld %d is thinking\n", temp,  philosophe->index);// 🤔
-		pthread_mutex_unlock(philosophe->table_info->mutex_printf);
+		pthread_mutex_unlock(&philosophe->table_info->mutex_printf);
         ft_usleep(philosophe->table_info->time_to_think);
 
     }
@@ -67,34 +72,72 @@ void de_synchronize_philo(philo *phi, time_t temp)
 {
     if (phi->index % 2 == 0)
     {
-        ft_usleep(100);
+        ft_usleep(3e4);
     }
     else
     {
         philo_action(phi, THINK, temp);
     }
 }
+int is_philo_die(philo *philosophe)
+{
+	int die;
+
+    pthread_mutex_lock(&philosophe->table_info->mutex_checking);
+	die = philosophe->died;
+    pthread_mutex_unlock(&philosophe->table_info->mutex_checking);
+
+	return (die);
+}
+
+int is_end(philo *philosophe)
+{
+	int end;
+
+    pthread_mutex_lock(&philosophe->table_info->mutex_checking);
+	end = philosophe->table_info->end;
+    pthread_mutex_unlock(&philosophe->table_info->mutex_checking);
+
+	return (end);
+}
+
+int is_full(philo *philosophe)
+{
+	int count;
+
+    pthread_mutex_lock(&philosophe->table_info->mutex_checking);
+	if (philosophe->table_info->extra_args == false)
+	{
+		count = 0;
+		pthread_mutex_unlock(&philosophe->table_info->mutex_checking);
+		return (count);
+	}
+	count = 0;
+	if (philosophe->eat_counters >= philosophe->table_info->limit_eat)
+		count = 1;
+    pthread_mutex_unlock(&philosophe->table_info->mutex_checking);
+	return (count);
+}
+
+
 void *begin_routine(void *phi)
 {
     philo *philosophe;
     time_t temp;
 
 	philosophe = (philo *)phi;
-	pthread_mutex_lock(philosophe->table_info->mutex_printf);
-	pthread_mutex_unlock(philosophe->table_info->mutex_printf);
+	pthread_mutex_lock(&philosophe->table_info->mutex_printf);
+	pthread_mutex_unlock(&philosophe->table_info->mutex_printf);
     temp = philosophe->table_info->time;
-    de_synchronize_philo(philosophe, temp);
+    //de_synchronize_philo(philosophe, temp);
     while (1)
     {
-        pthread_mutex_lock(philosophe->table_info->mutex_printf);
-        if (philosophe->table_info->end)
+        if (is_end(philosophe))
             exit(0);
-        if (philosophe->died)
-        {
-            printf("%ld %d is died  [ %ld ]\n", (get_time_in_ms() - temp), philosophe->index, philosophe->last_eat);
+        if (is_philo_die(philosophe))
             exit(0);
-        }
-        pthread_mutex_unlock(philosophe->table_info->mutex_printf);
+		if (is_full(philosophe))
+			exit(0);
         if (philosophe->index % 2 == 0)
         {
             take_fork(philosophe, philosophe->fork, temp);
@@ -131,42 +174,36 @@ bool is_died(philo *phil, t_mtx  *mtx, t_table *table)
         return (true);
     }
     return (false);
-
 }
 // add lock unlock before runnig threqd qnd printf 
 
-void *check_monitor(void *table_data)
+void *check_monitor(t_table *table)
 {
-    t_table *table;
     philo  *philo_list;
     t_mtx   *mutex;
 
-    table = (t_table *)table_data;
-    pthread_mutex_lock(table->mutex_printf);
-	pthread_mutex_unlock(table->mutex_printf);
-
-    mutex = malloc(sizeof(t_mtx));
-    pthread_mutex_init(mutex, NULL);
-    table = (t_table *)table_data;
+    pthread_mutex_lock(&table->mutex_printf);
+	pthread_mutex_unlock(&table->mutex_printf);
+    mutex = &table->mutex_checking;
     philo_list = table->philo;
     while (1)
     {
         pthread_mutex_lock(mutex);
-
         if (is_died(philo_list, mutex, table))
         {
-            printf("%ld %i is died [%ld]\n", get_time_in_ms() - table->time, philo_list->index, (get_time_in_ms() - table->time) - philo_list->last_eat);
+            printf("%ld %i is died\n", get_time_in_ms() - table->time, philo_list->index);
             exit (0);
         }
         philo_list = philo_list->next;
         pthread_mutex_unlock(mutex);
+		ft_usleep(10);
 
     }
 }
 int routine_philo (philo **philo_list)
 {
     pthread_t *thread_for_phil;
-    pthread_t monitor;
+    // pthread_t monitor;
 
     philo *philo;
     t_table *table;
@@ -178,11 +215,11 @@ int routine_philo (philo **philo_list)
     philo = *philo_list;
     table = philo->table_info;
     number_philo = philo->number_of_philo;
-    thread_for_phil = malloc(sizeof(pthread_t) * number_philo );
+    thread_for_phil = malloc(sizeof(pthread_t) * number_philo);
     table->philo = philo;
-	table->mutex_printf = malloc(sizeof(t_mtx));
-	pthread_mutex_init(table->mutex_printf, NULL);
-	pthread_mutex_lock(table->mutex_printf);
+	pthread_mutex_init(&table->mutex_checking, NULL);
+	pthread_mutex_init(&table->mutex_printf, NULL);
+	pthread_mutex_lock(&table->mutex_printf);
     while (number_philo > 0)
     {
 		philo->fork = malloc(sizeof(t_mtx));
@@ -192,15 +229,14 @@ int routine_philo (philo **philo_list)
         number_philo--;
         i++;
     }
-    pthread_create(&monitor, NULL, check_monitor,  table);
     j = 0;
 	table->time = get_time_in_ms();
-	pthread_mutex_unlock(table->mutex_printf);
+	pthread_mutex_unlock(&table->mutex_printf);
+	check_monitor(table);
     while (j < i)
     {
         pthread_join(thread_for_phil[j], NULL);
         j++;
     }
-    pthread_join(monitor, NULL);
 	return (0);
 }
