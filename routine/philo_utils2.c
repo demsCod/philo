@@ -4,7 +4,7 @@ void philo_print(t_mtx *mtx, philo *phil, int action)
 {
     time_t time;
 
-    if (get_bool(&phil->table_info->mutex_checking,  phil->died) || get_bool(&phil->table_info->mutex_checking,  phil->table_info->end))
+    if (get_bool(&phil->table_info->mutex_checking,  &phil->died) || get_bool(&phil->table_info->mutex_checking,  &phil->table_info->end))
             return;
     my_mutex_function(LOCK, mtx);
     if (action ==  TAKE_FORK)
@@ -27,7 +27,5 @@ void philo_print(t_mtx *mtx, philo *phil, int action)
 	    time = get_time_in_ms() - phil->table_info->time;
         printf("%ld      %d is thinking 🤔\n", time,  phil->index);// 🤔
     }
-    else
-        printf("EEEEEEEEEEEEEEEEEEEEERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRROOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRR\n\n\n");
     my_mutex_function(UNLOCK, mtx);
 }

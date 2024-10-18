@@ -4,22 +4,14 @@
 
 bool is_died(philo *phil, t_mtx  *mtx)
 {
-    return(get_bool(mtx, phil->died));
+    return(get_bool(mtx, &phil->died));
 }
 
 
 void de_synchronize_philo(philo *phi)
 {
-    if (phi->table_info->number_of_philo % 2 == 0)
-    {
-        if (phi->index % 2 == 0)
-            ft_usleep(30);
-    }
-    else
-    {
-        if (phi->index % 2)
-            ft_think(phi, true);
-    }
+    if (phi->index % 2 == 0)
+            ft_usleep(10);
 }
 
 bool is_philo_die(philo *philosophe)

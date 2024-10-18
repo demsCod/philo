@@ -6,7 +6,7 @@
 /*   By: mdembele <mdembele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:27:24 by mdembele          #+#    #+#             */
-/*   Updated: 2024/10/16 23:38:34 by mdembele         ###   ########.fr       */
+/*   Updated: 2024/10/19 00:26:02 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct t_table
 {
 	bool end;
 	bool extra_args;
+	bool ready;
 	time_t time_to_eat;
 	time_t time_to_sleep;
 	time_t time_to_die;
@@ -58,6 +59,7 @@ typedef struct t_table
 	t_mtx		 mutex_meal_count;
 	t_mtx		 mutex_calcul_think_time;
 	t_mtx		 mutex_dead;
+	t_mtx		 mutex_ready;
 
 
 
@@ -91,7 +93,7 @@ void 	philo_print(t_mtx *mtx, philo *phil, int action);
 t_table	*init_table_info(char **data);
 time_t	get_time_in_ms(void);
 bool 	is_philo_die(philo *philosophe);
-bool 	get_bool(t_mtx *mtx, bool value);
+bool 	get_bool(t_mtx *mtx, bool *value);
 void 	set_long(t_mtx *mtx, long *dest, long src);
 void 	set_bool(t_mtx *mtx, bool *dest, bool src);
 long 	get_long(t_mtx *mtx, long *value);

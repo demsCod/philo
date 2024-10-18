@@ -26,12 +26,12 @@ void my_mutex_function(int FLAG, t_mtx *mtx)
         ft_putendl_fd("Error no good flag dor mutex !!!!", 2);
 }
 
-bool get_bool(t_mtx *mtx, bool value)
+bool get_bool(t_mtx *mtx, bool *value)
 {
     bool ret;
 
     my_mutex_function(LOCK, mtx);
-    ret = value;
+    ret = *value;
     my_mutex_function(UNLOCK, mtx);
     return (ret);
 }
