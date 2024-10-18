@@ -127,3 +127,13 @@
 1802 4 is thinking 🤔 {1 ms}
 1802 16 is thinking 🤔 {1 ms}
 2010 2 is died   ///////////////////////////////////////////////
+
+
+the time to think is 60 but philo 3 ignore it
+
+802      3 is thinking 🤔
+803      1 is sleeping 😴
+803      2 has taken a fork 🍴
+803      2 has taken a fork 🍴
+803      2 is eating {🍝 0} 
+803      3 has taken a fork 🍴

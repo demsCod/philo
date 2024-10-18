@@ -7,14 +7,14 @@ void *begin_routine(void *phi)
 	philosophe = (philo *)phi;
 	my_mutex_function(LOCK, &philosophe->table_info->mutex_printf);
 	my_mutex_function(UNLOCK, &philosophe->table_info->mutex_printf);
-    //de_synchronize_philo(philosophe);
+    set_long(&philosophe->mutex_meal_time ,&philosophe->last_eat, 0);
+    de_synchronize_philo(philosophe);
     while (1)
     {
         if (get_bool(&philosophe->table_info->mutex_checking, philosophe->died))
             return NULL;
         if (get_bool(&philosophe->table_info->mutex_checking, philosophe->table_info->end))
             return NULL;
-        philo_action(philosophe, THINK);
         if (philosophe->index % 2 == 0)
         {
             take_fork(philosophe, philosophe->fork);
@@ -32,6 +32,7 @@ void *begin_routine(void *phi)
 			my_mutex_function(UNLOCK, philosophe->next->fork);
         }
         philo_action(philosophe, SLEEP);
+        philo_action(philosophe, THINK);
     }
 }
 
@@ -51,7 +52,7 @@ void *check_monitor(t_table *table)
             printf("%ld %i is died\n", get_time_in_ms() - table->time, philo_list->index);
             return NULL;
         }
-        //philo_list = philo_list->next;
+        philo_list = philo_list->next;
     }
 }
 

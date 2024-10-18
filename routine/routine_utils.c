@@ -10,13 +10,15 @@ bool is_died(philo *phil, t_mtx  *mtx)
 
 void de_synchronize_philo(philo *phi)
 {
-    if (phi->index % 2 == 0)
+    if (phi->table_info->number_of_philo % 2 == 0)
     {
-        ft_usleep(3e4);
+        if (phi->index % 2 == 0)
+            ft_usleep(30);
     }
     else
     {
-        philo_action(phi, THINK);
+        if (phi->index % 2)
+            ft_think(phi, true);
     }
 }
 
@@ -25,7 +27,7 @@ bool is_philo_die(philo *philosophe)
 	time_t last_eat;
 
     last_eat = (get_time_in_ms() - philosophe->table_info->time) - get_long(&philosophe->mutex_meal_time, &philosophe->last_eat);
-    if (last_eat >= philosophe->table_info->time_to_die)
+    if (last_eat > philosophe->table_info->time_to_die)
         return (true);
     return (false);
 }

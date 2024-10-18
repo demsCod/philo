@@ -72,6 +72,7 @@ typedef struct t_philo
 	time_t		last_eat;
 	t_mtx	 	*fork;
 	t_mtx 		mutex_meal_time;
+	t_mtx		ph_mutex;
 	t_table 	*table_info;
 	struct t_philo *next;	
 	bool		died;
@@ -95,7 +96,7 @@ void 	set_long(t_mtx *mtx, long *dest, long src);
 void 	set_bool(t_mtx *mtx, bool *dest, bool src);
 long 	get_long(t_mtx *mtx, long *value);
 void de_synchronize_philo(philo *phi);
-void ft_think(philo *philosophe);
+void ft_think(philo *philosophe, bool start);
 
 int	ft_usleep(size_t milliseconds);
 
