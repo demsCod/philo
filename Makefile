@@ -10,6 +10,11 @@ LIBFTPATH = ./libft
 FILES = philosopher.c \
 		init_program/init.c	\
 		routine/routine.c \
+		routine/philo_action.c \
+		routine/philo_utils.c \
+		routine/philo_utils2.c \
+		routine/routine_utils.c \
+		routine/times_utils.c \
 
 
 OBJ = $(FILES:.c=.o)
