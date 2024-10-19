@@ -49,13 +49,12 @@ typedef struct t_table
 	time_t     time;
 	time_t time_to_think;
 	int          number_of_philo;
-	int			 limit_eat;
+	time_t		 limit_eat;
 	struct t_philo		*philo;
 	pthread_t	 *monitor;
 	t_mtx		 mutex_printf;
 	t_mtx		 mutex_checking;
 	t_mtx		 mutex_meal_time;
-	t_mtx		 mutex_init_time;
 	t_mtx		 mutex_meal_count;
 	t_mtx		 mutex_calcul_think_time;
 	t_mtx		 mutex_dead;
@@ -70,10 +69,11 @@ typedef struct t_philo
 {
 	int 		index;
 	int			number_of_philo;
-	int 		eat_counters;
+	long		eat_counters;
 	time_t		last_eat;
 	t_mtx	 	*fork;
 	t_mtx 		mutex_meal_time;
+	t_mtx		 mutex_meal_count;
 	t_mtx		ph_mutex;
 	t_table 	*table_info;
 	struct t_philo *next;	

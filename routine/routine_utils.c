@@ -18,6 +18,7 @@ bool is_philo_die(philo *philosophe)
 {
 	time_t last_eat;
 
+	
     last_eat = (get_time_in_ms() - philosophe->table_info->time) - get_long(&philosophe->mutex_meal_time, &philosophe->last_eat);
     if (last_eat > philosophe->table_info->time_to_die)
         return (true);

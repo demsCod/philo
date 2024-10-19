@@ -1,139 +1,999 @@
-0 20 is thinking 🤔 {1 ms}
-0 2 is thinking 🤔 {1 ms}
-0 4 is thinking 🤔 {1 ms}
-0 6 is thinking 🤔 {1 ms}
-0 8 is thinking 🤔 {1 ms}
-0 10 is thinking 🤔 {1 ms}
-0 11 is thinking 🤔 {0 ms}
-0  11  has taken a fork 🍴
-0  11  has taken a fork 🍴
-0 11  is eating {🍝 1} 
-0 14 is thinking 🤔 {1 ms}
-0 15 is thinking 🤔 {0 ms}
-0  15  has taken a fork 🍴
-0  15  has taken a fork 🍴
-0 17 is thinking 🤔 {0 ms}
-0 15  is eating {🍝 1} 
-0  17  has taken a fork 🍴
-0  17  has taken a fork 🍴
-1 17  is eating {🍝 1} 
-1 5 is thinking 🤔 {0 ms}
-1  5  has taken a fork 🍴
-1  5  has taken a fork 🍴
-1 5  is eating {🍝 1} 
-1 13 is thinking 🤔 {0 ms}
-1  10  has taken a fork 🍴
-1 18 is thinking 🤔 {1 ms}
-1  20  has taken a fork 🍴
-1  2  has taken a fork 🍴   /////////////////////////////////////////////// /////////////////////////  TF 0
-1  2  has taken a fork 🍴   /////////////////////////////////////////////// ////////////////////////   TF 0
-1  8  has taken a fork 🍴
-1  8  has taken a fork 🍴
-1 8  is eating {🍝 1} 
-1  13  has taken a fork 🍴
-1  13  has taken a fork 🍴
-1 13  is eating {🍝 1} 
-1 3 is thinking 🤔 {0 ms}   **********************************************************************************
-1  20  has taken a fork 🍴
-1 20  is eating {🍝 1} 
-1 12 is thinking 🤔 {1 ms}
-2 7 is thinking 🤔 {0 ms}
-2 16 is thinking 🤔 {1 ms}
-2  4  has taken a fork 🍴
-1 2  is eating {🍝 1}         ///////////////////////////////////////////////////////////////////////////////////////////  EAT 0
-2   9 is thinking 🤔 {0 ms}
-2 19 is thinking 🤔 {0 ms}
-2 1 is thinking 🤔 {0 ms}    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-800  10  has taken a fork 🍴
-800 10  is eating {🍝 1} 
-800 11 is sleeping 😴
-800  12  has taken a fork 🍴
-800 15 is sleeping 😴
-800  16  has taken a fork 🍴
-801 5 is sleeping 😴
-801  6  has taken a fork 🍴
-801  6  has taken a fork 🍴
-801  18  has taken a fork 🍴
-801  18  has taken a fork 🍴
-801 18  is eating {🍝 1} 
-801  16  has taken a fork 🍴
-801 16  is eating {🍝 1} 
-801 6  is eating {🍝 1} 
-801 8 is sleeping 😴
-801 17 is sleeping 😴
-801  12  has taken a fork 🍴
-801 20 is sleeping 😴
-801  19  has taken a fork 🍴
-801 13 is sleeping 😴
-801  14  has taken a fork 🍴
-801  14  has taken a fork 🍴
-801 14  is eating {🍝 1} 
-801 12  is eating {🍝 1} 
-801  7  has taken a fork 🍴
-801  4  has taken a fork 🍴
-801 4  is eating {🍝 1} 
-802 2 is sleeping 😴   /////////////////////////////////////////////// SLEEP 800
-802  1  has taken a fork 🍴  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ TF 800
-802  1  has taken a fork 🍴   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ TF 800
-802 1  is eating {🍝 1}         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EAT 800
-1000 11 is thinking 🤔 {0 ms}
-1000 15 is thinking 🤔 {0 ms}
-1001 5 is thinking 🤔 {0 ms}
-1001 13 is thinking 🤔 {0 ms}
-1001 20 is thinking 🤔 {1 ms}
-1001 8 is thinking 🤔 {1 ms}
-1001 17 is thinking 🤔 {0 ms}
-1002 2 is thinking 🤔 {1 ms}   /////////////////////////////////////////////// THINKING 1000
-1600 10 is sleeping 😴
-1600  9  has taken a fork 🍴
-1600  9  has taken a fork 🍴
-1600 9  is eating {🍝 1} 
-1601 12 is sleeping 😴
-1601  7  has taken a fork 🍴
-1601 7  is eating {🍝 1} 
-1601  11  has taken a fork 🍴
-1601  15  has taken a fork 🍴
-1601  17  has taken a fork 🍴
-1601  13  has taken a fork 🍴
-1601  13  has taken a fork 🍴
-1601 14 is sleeping 😴
-1601 13  is eating {🍝 2} 
-1601 18 is sleeping 😴
-1601  5  has taken a fork 🍴
-1601  19  has taken a fork 🍴
-1601 19  is eating {🍝 1} 
-1601  15  has taken a fork 🍴
-1601 15  is eating {🍝 2} 
-1601  17  has taken a fork 🍴
-1601 17  is eating {🍝 2} 
-1601 6 is sleeping 😴
-1601 16 is sleeping 😴
-1602  11  has taken a fork 🍴
-1602 11  is eating {🍝 2} 
-1602 1 is sleeping 😴   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-1602  5  has taken a fork 🍴
-1602 5  is eating {🍝 2} 
-1602 4 is sleeping 😴
-1602  3  has taken a fork 🍴 ******************************
-1602  3  has taken a fork 🍴 ********************************
-1602 3  is eating {🍝 1}     ************************************
-1602  2  has taken a fork 🍴   ///////////////////////////////////////////////
-1800 10 is thinking 🤔 {1 ms}
-1801 14 is thinking 🤔 {1 ms}
-1801 12 is thinking 🤔 {1 ms}
-1801 6 is thinking 🤔 {1 ms}
-1801 18 is thinking 🤔 {1 ms}
-1802 1 is thinking 🤔 {0 ms}
-1802 4 is thinking 🤔 {1 ms}
-1802 16 is thinking 🤔 {1 ms}
-2010 2 is died   ///////////////////////////////////////////////
+0      29 has taken a fork 🍴
+1      61 has taken a fork 🍴
+1      175 has taken a fork 🍴
+1      149 has taken a fork 🍴
+1      117 has taken a fork 🍴
+1      117 has taken a fork 🍴
+1      117 is eating {🍝 0} 
+1      63 has taken a fork 🍴
+1      63 has taken a fork 🍴
+1      63 is eating {🍝 0} 
+1      153 has taken a fork 🍴
+1      135 has taken a fork 🍴
+1      135 has taken a fork 🍴
+1      135 is eating {🍝 0} 
+2      187 has taken a fork 🍴
+2      105 has taken a fork 🍴
+2      139 has taken a fork 🍴
+2      139 has taken a fork 🍴
+2      47 has taken a fork 🍴
+2      47 has taken a fork 🍴
+2      95 has taken a fork 🍴
+2      95 has taken a fork 🍴
+3      95 is eating {🍝 0} 
+3      143 has taken a fork 🍴
+3      143 has taken a fork 🍴
+3      143 is eating {🍝 0} 
+3      35 has taken a fork 🍴
+3      35 has taken a fork 🍴
+3      35 is eating {🍝 0} 
+3      31 has taken a fork 🍴
+3      5 has taken a fork 🍴
+3      191 has taken a fork 🍴
+4      191 has taken a fork 🍴
+4      191 is eating {🍝 0} 
+4      31 has taken a fork 🍴
+4      27 has taken a fork 🍴
+4      27 has taken a fork 🍴
+4      27 is eating {🍝 0} 
+4      109 has taken a fork 🍴
+4      109 has taken a fork 🍴
+4      109 is eating {🍝 0} 
+4      131 has taken a fork 🍴
+4      131 has taken a fork 🍴
+4      13 has taken a fork 🍴
+5      13 has taken a fork 🍴
+5      13 is eating {🍝 0} 
+5      141 has taken a fork 🍴
+5      141 has taken a fork 🍴
+5      141 is eating {🍝 0} 
+5      23 has taken a fork 🍴
+5      131 is eating {🍝 0} 
+5      125 has taken a fork 🍴
+5      125 has taken a fork 🍴
+5      125 is eating {🍝 0} 
+5      189 has taken a fork 🍴
+5      189 has taken a fork 🍴
+5      189 is eating {🍝 0} 
+5      81 has taken a fork 🍴
+5      81 has taken a fork 🍴
+5      81 is eating {🍝 0} 
+5      157 has taken a fork 🍴
+5      157 has taken a fork 🍴
+5      157 is eating {🍝 0} 
+5      65 has taken a fork 🍴
+6      71 has taken a fork 🍴
+6      71 has taken a fork 🍴
+6      71 is eating {🍝 0} 
+6      119 has taken a fork 🍴
+6      119 has taken a fork 🍴
+6      119 is eating {🍝 0} 
+6      53 has taken a fork 🍴
+6      53 has taken a fork 🍴
+6      53 is eating {🍝 0} 
+6      137 has taken a fork 🍴
+6      137 has taken a fork 🍴
+6      137 is eating {🍝 0} 
+6      129 has taken a fork 🍴
+6      129 has taken a fork 🍴
+6      129 is eating {🍝 0} 
+6      19 has taken a fork 🍴
+6      113 has taken a fork 🍴
+6      19 has taken a fork 🍴
+6      19 is eating {🍝 0} 
+6      113 has taken a fork 🍴
+6      113 is eating {🍝 0} 
+6      123 has taken a fork 🍴
+6      123 has taken a fork 🍴
+6      123 is eating {🍝 0} 
+6      111 has taken a fork 🍴
+6      111 has taken a fork 🍴
+6      111 is eating {🍝 0} 
+6      83 has taken a fork 🍴
+7      83 has taken a fork 🍴
+7      83 is eating {🍝 0} 
+7      185 has taken a fork 🍴
+7      161 has taken a fork 🍴
+7      161 has taken a fork 🍴
+7      161 is eating {🍝 0} 
+7      57 has taken a fork 🍴
+7      57 has taken a fork 🍴
+7      171 has taken a fork 🍴
+7      11 has taken a fork 🍴
+8      85 has taken a fork 🍴
+8      85 has taken a fork 🍴
+8      1 has taken a fork 🍴
+8      1 has taken a fork 🍴
+8      1 is eating {🍝 0} 
+8      93 has taken a fork 🍴
+8      127 has taken a fork 🍴
+8      43 has taken a fork 🍴
+9      43 has taken a fork 🍴
+9      43 is eating {🍝 0} 
+9      37 has taken a fork 🍴
+9      177 has taken a fork 🍴
+9      177 has taken a fork 🍴
+9      7 has taken a fork 🍴
+9      7 has taken a fork 🍴
+10      10 has taken a fork 🍴
+10      26 has taken a fork 🍴
+10      98 has taken a fork 🍴
+10      72 has taken a fork 🍴
+10      100 has taken a fork 🍴
+10      82 has taken a fork 🍴
+10      76 has taken a fork 🍴
+10      151 has taken a fork 🍴
+10      22 has taken a fork 🍴
+10      188 has taken a fork 🍴
+10      32 has taken a fork 🍴
+10      2 has taken a fork 🍴
+10      106 has taken a fork 🍴
+10      20 has taken a fork 🍴
+10      54 has taken a fork 🍴
+10      20 has taken a fork 🍴
+10      54 has taken a fork 🍴
+10      164 has taken a fork 🍴
+10      30 has taken a fork 🍴
+10      30 has taken a fork 🍴
+10      102 has taken a fork 🍴
+11      102 has taken a fork 🍴
+11      69 has taken a fork 🍴
+11      69 has taken a fork 🍴
+11      69 is eating {🍝 0} 
+11      153 has taken a fork 🍴
+11      94 has taken a fork 🍴
+11      134 has taken a fork 🍴
+11      41 has taken a fork 🍴
+11      134 has taken a fork 🍴
+11      134 is eating {🍝 0} 
+11      17 has taken a fork 🍴
+11      39 has taken a fork 🍴
+11      84 has taken a fork 🍴
+11      84 has taken a fork 🍴
+11      84 is eating {🍝 0} 
+11      68 has taken a fork 🍴
+11      110 has taken a fork 🍴
+11      110 has taken a fork 🍴
+11      5 has taken a fork 🍴
+11      173 has taken a fork 🍴
+11      101 has taken a fork 🍴
+11      73 has taken a fork 🍴
+11      73 has taken a fork 🍴
+11      73 is eating {🍝 0} 
+11      9 has taken a fork 🍴
+11      5 is eating {🍝 0} 
+11      23 has taken a fork 🍴
+11      23 is eating {🍝 0} 
+11      147 has taken a fork 🍴
+11      147 has taken a fork 🍴
+11      147 is eating {🍝 0} 
+11      75 has taken a fork 🍴
+11      75 has taken a fork 🍴
+11      75 is eating {🍝 0} 
+12      115 has taken a fork 🍴
+12      115 has taken a fork 🍴
+12      115 is eating {🍝 0} 
+12      107 has taken a fork 🍴
+12      107 has taken a fork 🍴
+12      107 is eating {🍝 0} 
+12      49 has taken a fork 🍴
+12      49 has taken a fork 🍴
+12      49 is eating {🍝 0} 
+12      197 has taken a fork 🍴
+12      197 has taken a fork 🍴
+12      197 is eating {🍝 0} 
+12      15 has taken a fork 🍴
+12      15 has taken a fork 🍴
+12      15 is eating {🍝 0} 
+12      85 is eating {🍝 0} 
+12      11 has taken a fork 🍴
+12      11 is eating {🍝 0} 
+12      181 has taken a fork 🍴
+12      133 has taken a fork 🍴
+12      133 has taken a fork 🍴
+12      21 has taken a fork 🍴
+12      21 has taken a fork 🍴
+12      21 is eating {🍝 0} 
+12      133 is eating {🍝 0} 
+13      177 is eating {🍝 0} 
+13      56 has taken a fork 🍴
+13      56 has taken a fork 🍴
+13      56 is eating {🍝 0} 
+13      116 has taken a fork 🍴
+13      116 has taken a fork 🍴
+13      116 is eating {🍝 0} 
+13      146 has taken a fork 🍴
+13      146 has taken a fork 🍴
+13      146 is eating {🍝 0} 
+13      78 has taken a fork 🍴
+13      78 has taken a fork 🍴
+13      78 is eating {🍝 0} 
+13      120 has taken a fork 🍴
+13      120 has taken a fork 🍴
+13      120 is eating {🍝 0} 
+13      152 has taken a fork 🍴
+13      152 has taken a fork 🍴
+13      152 is eating {🍝 0} 
+13      130 has taken a fork 🍴
+13      130 has taken a fork 🍴
+13      130 is eating {🍝 0} 
+13      158 has taken a fork 🍴
+13      158 has taken a fork 🍴
+13      158 is eating {🍝 0} 
+13      180 has taken a fork 🍴
+13      10 has taken a fork 🍴
+13      180 has taken a fork 🍴
+13      182 has taken a fork 🍴
+13      60 has taken a fork 🍴
+13      60 has taken a fork 🍴
+13      121 has taken a fork 🍴
+13      121 has taken a fork 🍴
+13      121 is eating {🍝 0} 
+14      26 has taken a fork 🍴
+14      26 is eating {🍝 0} 
+14      126 has taken a fork 🍴
+14      126 has taken a fork 🍴
+14      126 is eating {🍝 0} 
+14      195 has taken a fork 🍴
+14      195 has taken a fork 🍴
+14      195 is eating {🍝 0} 
+14      108 has taken a fork 🍴
+14      108 has taken a fork 🍴
+14      108 is eating {🍝 0} 
+14      52 has taken a fork 🍴
+14      52 has taken a fork 🍴
+14      52 is eating {🍝 0} 
+14      66 has taken a fork 🍴
+14      66 has taken a fork 🍴
+14      66 is eating {🍝 0} 
+14      62 has taken a fork 🍴
+14      62 has taken a fork 🍴
+14      62 is eating {🍝 0} 
+14      86 has taken a fork 🍴
+14      86 has taken a fork 🍴
+14      86 is eating {🍝 0} 
+14      104 has taken a fork 🍴
+14      104 has taken a fork 🍴
+14      104 is eating {🍝 0} 
+14      34 has taken a fork 🍴
+14      34 has taken a fork 🍴
+14      34 is eating {🍝 0} 
+14      100 has taken a fork 🍴
+14      100 is eating {🍝 0} 
+15      76 has taken a fork 🍴
+15      76 is eating {🍝 0} 
+15      124 has taken a fork 🍴
+15      124 has taken a fork 🍴
+15      124 is eating {🍝 0} 
+15      183 has taken a fork 🍴
+15      183 has taken a fork 🍴
+15      183 is eating {🍝 0} 
+15      38 has taken a fork 🍴
+15      38 has taken a fork 🍴
+15      80 has taken a fork 🍴
+15      80 has taken a fork 🍴
+15      80 is eating {🍝 0} 
+15      122 has taken a fork 🍴
+15      122 has taken a fork 🍴
+15      122 is eating {🍝 0} 
+15      138 has taken a fork 🍴
+15      138 has taken a fork 🍴
+15      138 is eating {🍝 0} 
+15      64 has taken a fork 🍴
+15      64 has taken a fork 🍴
+15      64 is eating {🍝 0} 
+15      98 has taken a fork 🍴
+15      98 is eating {🍝 0} 
+15      28 has taken a fork 🍴
+15      28 has taken a fork 🍴
+15      28 is eating {🍝 0} 
+15      33 has taken a fork 🍴
+15      33 has taken a fork 🍴
+15      33 is eating {🍝 0} 
+16      132 has taken a fork 🍴
+16      132 has taken a fork 🍴
+16      132 is eating {🍝 0} 
+16      90 has taken a fork 🍴
+16      90 has taken a fork 🍴
+16      90 is eating {🍝 0} 
+16      50 has taken a fork 🍴
+16      50 has taken a fork 🍴
+16      50 is eating {🍝 0} 
+16      190 has taken a fork 🍴
+16      190 has taken a fork 🍴
+16      190 is eating {🍝 0} 
+16      87 has taken a fork 🍴
+16      87 has taken a fork 🍴
+16      87 is eating {🍝 0} 
+16      178 has taken a fork 🍴
+16      178 has taken a fork 🍴
+16      178 is eating {🍝 0} 
+16      166 has taken a fork 🍴
+16      166 has taken a fork 🍴
+16      166 is eating {🍝 0} 
+16      179 has taken a fork 🍴
+16      179 has taken a fork 🍴
+16      179 is eating {🍝 0} 
+16      148 has taken a fork 🍴
+17      148 has taken a fork 🍴
+17      148 is eating {🍝 0} 
+17      44 has taken a fork 🍴
+17      44 has taken a fork 🍴
+17      44 is eating {🍝 0} 
+17      145 has taken a fork 🍴
+17      145 has taken a fork 🍴
+17      145 is eating {🍝 0} 
+17      106 has taken a fork 🍴
+17      106 is eating {🍝 0} 
+17      156 has taken a fork 🍴
+17      118 has taken a fork 🍴
+17      118 has taken a fork 🍴
+17      118 is eating {🍝 0} 
+17      6 has taken a fork 🍴
+17      6 has taken a fork 🍴
+17      18 has taken a fork 🍴
+17      6 is eating {🍝 0} 
+17      140 has taken a fork 🍴
+17      140 has taken a fork 🍴
+17      140 is eating {🍝 0} 
+18      54 is eating {🍝 0} 
+18      198 has taken a fork 🍴
+18      198 has taken a fork 🍴
+18      198 is eating {🍝 0} 
+18      128 has taken a fork 🍴
+18      128 has taken a fork 🍴
+18      128 is eating {🍝 0} 
+18      59 has taken a fork 🍴
+18      163 has taken a fork 🍴
+18      163 has taken a fork 🍴
+18      163 is eating {🍝 0} 
+18      169 has taken a fork 🍴
+18      169 has taken a fork 🍴
+18      169 is eating {🍝 0} 
+18      89 has taken a fork 🍴
+18      89 has taken a fork 🍴
+18      89 is eating {🍝 0} 
+19      170 has taken a fork 🍴
+19      170 has taken a fork 🍴
+19      170 is eating {🍝 0} 
+19      24 has taken a fork 🍴
+19      24 has taken a fork 🍴
+19      24 is eating {🍝 0} 
+19      4 has taken a fork 🍴
+19      4 has taken a fork 🍴
+19      4 is eating {🍝 0} 
+19      196 has taken a fork 🍴
+19      196 has taken a fork 🍴
+19      196 is eating {🍝 0} 
+20      150 has taken a fork 🍴
+20      150 has taken a fork 🍴
+20      150 is eating {🍝 0} 
+20      184 has taken a fork 🍴
+20      184 has taken a fork 🍴
+20      184 is eating {🍝 0} 
+20      67 has taken a fork 🍴
+20      102 is eating {🍝 0} 
+20      25 has taken a fork 🍴
+20      25 has taken a fork 🍴
+20      25 is eating {🍝 0} 
+20      193 has taken a fork 🍴
+20      193 has taken a fork 🍴
+20      193 is eating {🍝 0} 
+20      153 is eating {🍝 0} 
+20      94 has taken a fork 🍴
+20      94 is eating {🍝 0} 
+20      105 has taken a fork 🍴
+20      159 has taken a fork 🍴
+21      159 has taken a fork 🍴
+21      159 is eating {🍝 0} 
+21      41 has taken a fork 🍴
+21      41 is eating {🍝 0} 
+21      17 has taken a fork 🍴
+21      17 is eating {🍝 0} 
+21      114 has taken a fork 🍴
+21      114 has taken a fork 🍴
+21      114 is eating {🍝 0} 
+22      47 is eating {🍝 0} 
+22      39 has taken a fork 🍴
+22      39 is eating {🍝 0} 
+22      139 is eating {🍝 0} 
+23      194 has taken a fork 🍴
+23      74 has taken a fork 🍴
+23      74 has taken a fork 🍴
+23      74 is eating {🍝 0} 
+23      51 has taken a fork 🍴
+23      51 has taken a fork 🍴
+23      51 is eating {🍝 0} 
+23      68 has taken a fork 🍴
+23      68 is eating {🍝 0} 
+23      186 has taken a fork 🍴
+23      186 has taken a fork 🍴
+24      186 is eating {🍝 0} 
+24      160 has taken a fork 🍴
+24      160 has taken a fork 🍴
+24      160 is eating {🍝 0} 
+24      101 has taken a fork 🍴
+24      101 is eating {🍝 0} 
+24      31 is eating {🍝 0} 
+25      173 has taken a fork 🍴
+25      173 is eating {🍝 0} 
+25      199 has taken a fork 🍴
+25      199 has taken a fork 🍴
+25      199 is eating {🍝 0} 
+25      155 has taken a fork 🍴
+25      155 has taken a fork 🍴
+25      155 is eating {🍝 0} 
+28      77 has taken a fork 🍴
+28      77 has taken a fork 🍴
+28      77 is eating {🍝 0} 
+28      165 has taken a fork 🍴
+29      165 has taken a fork 🍴
+29      165 is eating {🍝 0} 
+29      91 has taken a fork 🍴
+29      91 has taken a fork 🍴
+29      91 is eating {🍝 0} 
+29      167 has taken a fork 🍴
+29      167 has taken a fork 🍴
+29      167 is eating {🍝 0} 
+32      185 has taken a fork 🍴
+32      185 is eating {🍝 0} 
+33      171 has taken a fork 🍴
+33      171 is eating {🍝 0} 
+33      57 is eating {🍝 0} 
+33      181 has taken a fork 🍴
+33      181 is eating {🍝 0} 
+33      127 has taken a fork 🍴
+33      127 is eating {🍝 0} 
+34      37 has taken a fork 🍴
+34      37 is eating {🍝 0} 
+34      88 has taken a fork 🍴
+34      88 has taken a fork 🍴
+34      88 is eating {🍝 0} 
+34      200 has taken a fork 🍴
+34      92 has taken a fork 🍴
+35      92 has taken a fork 🍴
+35      92 is eating {🍝 0} 
+35      112 has taken a fork 🍴
+36      112 has taken a fork 🍴
+36      112 is eating {🍝 0} 
+36      7 is eating {🍝 0} 
+36      180 is eating {🍝 0} 
+37      182 has taken a fork 🍴
+37      182 is eating {🍝 0} 
+37      97 has taken a fork 🍴
+37      97 has taken a fork 🍴
+37      97 is eating {🍝 0} 
+37      60 is eating {🍝 0} 
+38      3 has taken a fork 🍴
+38      3 has taken a fork 🍴
+38      3 is eating {🍝 0} 
+39      42 has taken a fork 🍴
+39      42 has taken a fork 🍴
+40      42 is eating {🍝 0} 
+40      79 has taken a fork 🍴
+40      82 has taken a fork 🍴
+41      14 has taken a fork 🍴
+41      14 has taken a fork 🍴
+41      38 is eating {🍝 0} 
+41      176 has taken a fork 🍴
+42      142 has taken a fork 🍴
+42      142 has taken a fork 🍴
+42      142 is eating {🍝 0} 
+42      188 has taken a fork 🍴
+43      188 is eating {🍝 0} 
+43      16 has taken a fork 🍴
+43      16 has taken a fork 🍴
+43      16 is eating {🍝 0} 
+43      32 has taken a fork 🍴
+43      32 is eating {🍝 0} 
+43      70 has taken a fork 🍴
+43      70 has taken a fork 🍴
+43      70 is eating {🍝 0} 
+44      96 has taken a fork 🍴
+44      96 has taken a fork 🍴
+44      96 is eating {🍝 0} 
+44      36 has taken a fork 🍴
+44      36 has taken a fork 🍴
+44      36 is eating {🍝 0} 
+44      2 has taken a fork 🍴
+44      48 has taken a fork 🍴
+44      48 has taken a fork 🍴
+45      48 is eating {🍝 0} 
+45      18 has taken a fork 🍴
+46      18 is eating {🍝 0} 
+46      45 has taken a fork 🍴
+46      45 has taken a fork 🍴
+46      45 is eating {🍝 0} 
+46      59 has taken a fork 🍴
+47      59 is eating {🍝 0} 
+47      30 is eating {🍝 0} 
+47      61 has taken a fork 🍴
+47      61 is eating {🍝 0} 
+47      172 has taken a fork 🍴
+47      172 has taken a fork 🍴
+47      172 is eating {🍝 0} 
+48      175 has taken a fork 🍴
+48      175 is eating {🍝 0} 
+48      151 has taken a fork 🍴
+48      151 is eating {🍝 0} 
+49      149 has taken a fork 🍴
+49      149 is eating {🍝 0} 
+49      187 has taken a fork 🍴
+49      187 is eating {🍝 0} 
+50      105 is eating {🍝 0} 
+50      99 has taken a fork 🍴
+50      99 has taken a fork 🍴
+50      99 is eating {🍝 0} 
+50      194 has taken a fork 🍴
+51      194 is eating {🍝 0} 
+51      12 has taken a fork 🍴
+51      12 has taken a fork 🍴
+51      12 is eating {🍝 0} 
+51      55 has taken a fork 🍴
+52      55 has taken a fork 🍴
+52      55 is eating {🍝 0} 
+52      110 is eating {🍝 0} 
+52      9 has taken a fork 🍴
+53      9 is eating {🍝 0} 
+53      65 has taken a fork 🍴
+53      65 is eating {🍝 0} 
+53      93 has taken a fork 🍴
+53      93 is eating {🍝 0} 
+56      103 has taken a fork 🍴
+56      103 has taken a fork 🍴
+57      103 is eating {🍝 0} 
+57      46 has taken a fork 🍴
+58      10 is eating {🍝 0} 
+59      168 has taken a fork 🍴
+59      168 has taken a fork 🍴
+59      168 is eating {🍝 0} 
+59      154 has taken a fork 🍴
+59      154 has taken a fork 🍴
+60      154 is eating {🍝 0} 
+60      79 has taken a fork 🍴
+60      79 is eating {🍝 0} 
+60      82 is eating {🍝 0} 
+61      8 has taken a fork 🍴
+61      8 has taken a fork 🍴
+61      8 is eating {🍝 0} 
+62      176 has taken a fork 🍴
+62      176 is eating {🍝 0} 
+62      162 has taken a fork 🍴
+62      162 has taken a fork 🍴
+62      162 is eating {🍝 0} 
+62      40 has taken a fork 🍴
+63      40 has taken a fork 🍴
+64      40 is eating {🍝 0} 
+65      156 has taken a fork 🍴
+66      156 is eating {🍝 0} 
+66      58 has taken a fork 🍴
+67      58 has taken a fork 🍴
+68      58 is eating {🍝 0} 
+68      164 has taken a fork 🍴
+68      164 is eating {🍝 0} 
+68      29 has taken a fork 🍴
+69      29 is eating {🍝 0} 
+69      174 has taken a fork 🍴
+69      174 has taken a fork 🍴
+69      174 is eating {🍝 0} 
+69      67 has taken a fork 🍴
+70      192 has taken a fork 🍴
+70      192 has taken a fork 🍴
+70      192 is eating {🍝 0} 
+71      144 has taken a fork 🍴
+71      144 has taken a fork 🍴
+72      72 has taken a fork 🍴
+72      72 is eating {🍝 0} 
+73      22 has taken a fork 🍴
+74      2 is eating {🍝 0} 
+75      20 is eating {🍝 0} 
+75      136 has taken a fork 🍴
+75      136 has taken a fork 🍴
+76      136 is eating {🍝 0} 
+77      46 has taken a fork 🍴
+78      46 is eating {🍝 0} 
+79      14 is eating {🍝 0} 
+81      22 is eating {🍝 0} 
+82      200 has taken a fork 🍴
+82      200 is eating {🍝 0} 
+84      144 is eating {🍝 0} 
+84      67 is eating {🍝 0} 
+201      63 is sleeping 😴
+201      117 is sleeping 😴
+202      135 is sleeping 😴
+204      35 is sleeping 😴
+204      109 is sleeping 😴
+204      191 is sleeping 😴
+204      95 is sleeping 😴
+205      143 is sleeping 😴
+205      189 is sleeping 😴
+205      131 is sleeping 😴
+205      27 is sleeping 😴
+205      81 is sleeping 😴
+205      141 is sleeping 😴
+205      13 is sleeping 😴
+206      53 is sleeping 😴
+206      71 is sleeping 😴
+206      19 is sleeping 😴
+206      111 is sleeping 😴
+207      161 is sleeping 😴
+207      157 is sleeping 😴
+209      43 is sleeping 😴
+209      125 is sleeping 😴
+209      113 is sleeping 😴
+210      123 is sleeping 😴
+211      5 is sleeping 😴
+212      107 is sleeping 😴
+212      49 is sleeping 😴
+212      1 is sleeping 😴
+213      121 is sleeping 😴
+213      137 is sleeping 😴
+213      147 is sleeping 😴
+214      23 is sleeping 😴
+214      104 is sleeping 😴
+215      33 is sleeping 😴
+215      64 is sleeping 😴
+216      132 is sleeping 😴
+216      84 is sleeping 😴
+216      119 is sleeping 😴
+216      90 is sleeping 😴
+216      87 is sleeping 😴
+216      129 is sleeping 😴
+216      133 is sleeping 😴
+217      140 is sleeping 😴
+217      83 is sleeping 😴
+217      85 is sleeping 😴
+217      21 is sleeping 😴
+218      169 is sleeping 😴
+218      158 is sleeping 😴
+218      130 is sleeping 😴
+219      115 is sleeping 😴
+219      4 is sleeping 😴
+219      89 is sleeping 😴
+219      177 is sleeping 😴
+219      120 is sleeping 😴
+219      146 is sleeping 😴
+220      153 is sleeping 😴
+220      152 is sleeping 😴
+220      193 is sleeping 😴
+220      184 is sleeping 😴
+220      25 is sleeping 😴
+220      108 is sleeping 😴
+221      17 is sleeping 😴
+221      159 is sleeping 😴
+221      41 is sleeping 😴
+221      195 is sleeping 😴
+221      26 is sleeping 😴
+222      47 is sleeping 😴
+222      139 is sleeping 😴
+222      86 is sleeping 😴
+222      52 is sleeping 😴
+222      62 is sleeping 😴
+222      66 is sleeping 😴
+222      98 is sleeping 😴
+222      80 is sleeping 😴
+223      68 is sleeping 😴
+223      183 is sleeping 😴
+223      76 is sleeping 😴
+223      74 is sleeping 😴
+223      28 is sleeping 😴
+223      124 is sleeping 😴
+224      73 is sleeping 😴
+224      122 is sleeping 😴
+224      31 is sleeping 😴
+225      69 is sleeping 😴
+225      173 is sleeping 😴
+225      50 is sleeping 😴
+225      178 is sleeping 😴
+225      166 is sleeping 😴
+226      179 is sleeping 😴
+227      134 is sleeping 😴
+227      11 is sleeping 😴
+227      190 is sleeping 😴
+227      6 is sleeping 😴
+227      145 is sleeping 😴
+228      77 is sleeping 😴
+228      118 is sleeping 😴
+228      44 is sleeping 😴
+229      106 is sleeping 😴
+229      165 is sleeping 😴
+229      148 is sleeping 😴
+229      15 is sleeping 😴
+230      54 is sleeping 😴
+231      163 is sleeping 😴
+231      197 is sleeping 😴
+232      198 is sleeping 😴
+232      128 is sleeping 😴
+233      24 is sleeping 😴
+233      57 is sleeping 😴
+233      171 is sleeping 😴
+233      181 is sleeping 😴
+233      116 is sleeping 😴
+233      170 is sleeping 😴
+234      127 is sleeping 😴
+234      56 is sleeping 😴
+234      78 is sleeping 😴
+235      75 is sleeping 😴
+236      196 is sleeping 😴
+237      182 is sleeping 😴
+237      97 is sleeping 😴
+237      94 is sleeping 😴
+237      180 is sleeping 😴
+238      3 is sleeping 😴
+238      102 is sleeping 😴
+238      60 is sleeping 😴
+238      150 is sleeping 😴
+239      114 is sleeping 😴
+240      39 is sleeping 😴
+240      34 is sleeping 😴
+241      38 is sleeping 😴
+241      51 is sleeping 😴
+242      100 is sleeping 😴
+243      160 is sleeping 😴
+243      188 is sleeping 😴
+243      186 is sleeping 😴
+243      32 is sleeping 😴
+243      16 is sleeping 😴
+243      101 is sleeping 😴
+244      138 is sleeping 😴
+244      36 is sleeping 😴
+244      96 is sleeping 😴
+244      155 is sleeping 😴
+245      91 is sleeping 😴
+246      45 is sleeping 😴
+246      18 is sleeping 😴
+246      167 is sleeping 😴
+247      185 is sleeping 😴
+248      88 is sleeping 😴
+248      37 is sleeping 😴
+249      149 is sleeping 😴
+250      112 is sleeping 😴
+251      12 is sleeping 😴
+251      194 is sleeping 😴
+252      126 is sleeping 😴
+252      55 is sleeping 😴
+252      42 is sleeping 😴
+253      110 is sleeping 😴
+253      9 is sleeping 😴
+254      199 is sleeping 😴
+254      93 is sleeping 😴
+254      48 is sleeping 😴
+255      172 is sleeping 😴
+255      61 is sleeping 😴
+256      30 is sleeping 😴
+256      59 is sleeping 😴
+257      103 is sleeping 😴
+257      175 is sleeping 😴
+257      187 is sleeping 😴
+259      168 is sleeping 😴
+259      151 is sleeping 😴
+260      154 is sleeping 😴
+260      82 is sleeping 😴
+261      105 is sleeping 😴
+262      176 is sleeping 😴
+262      7 is sleeping 😴
+263      142 is sleeping 😴
+264      65 is sleeping 😴
+265      40 is sleeping 😴
+266      156 is sleeping 😴
+267      10 is sleeping 😴
+267      92 is sleeping 😴
+267      79 is sleeping 😴
+268      99 is sleeping 😴
+269      8 is sleeping 😴
+269      162 is sleeping 😴
+269      70 is sleeping 😴
+270      174 is sleeping 😴
+271      58 is sleeping 😴
+271      192 is sleeping 😴
+271      29 is sleeping 😴
+271      164 is sleeping 😴
+273      72 is sleeping 😴
+274      2 is sleeping 😴
+275      20 is sleeping 😴
+277      136 is sleeping 😴
+279      46 is sleeping 😴
+281      14 is sleeping 😴
+281      22 is sleeping 😴
+284      200 is sleeping 😴
+285      144 is sleeping 😴
+285      67 is sleeping 😴
+291      63 is thinking 🤔
+291      63 has taken a fork 🍴
+291      63 has taken a fork 🍴
+291      63 is eating {🍝 0} 
+292      117 is thinking 🤔
+292      117 has taken a fork 🍴
+292      117 has taken a fork 🍴
+292      117 is eating {🍝 0} 
+292      135 is thinking 🤔
+293      135 has taken a fork 🍴
+293      135 has taken a fork 🍴
+294      135 is eating {🍝 0} 
+295      189 is thinking 🤔
+295      189 has taken a fork 🍴
+296      189 has taken a fork 🍴
+297      189 is eating {🍝 0} 
+297      81 is thinking 🤔
+297      81 has taken a fork 🍴
+298      81 has taken a fork 🍴
+298      81 is eating {🍝 0} 
+298      13 is thinking 🤔
+299      13 has taken a fork 🍴
+299      13 has taken a fork 🍴
+299      13 is eating {🍝 0} 
+299      27 is thinking 🤔
+300      27 has taken a fork 🍴
+300      27 has taken a fork 🍴
+301      123 is thinking 🤔
+301      123 has taken a fork 🍴
+301      123 has taken a fork 🍴
+301      123 is eating {🍝 0} 
+301      19 is thinking 🤔
+302      19 has taken a fork 🍴
+302      19 has taken a fork 🍴
+303      19 is eating {🍝 0} 
+304      23 is thinking 🤔
+304      23 has taken a fork 🍴
+305      104 is thinking 🤔
+305      104 has taken a fork 🍴
+305      104 has taken a fork 🍴
+305      104 is eating {🍝 0} 
+305      131 is thinking 🤔
+306      131 has taken a fork 🍴
+306      157 is thinking 🤔
+306      157 has taken a fork 🍴
+306      157 has taken a fork 🍴
+306      157 is eating {🍝 0} 
+306      87 is thinking 🤔
+306      87 has taken a fork 🍴
+306      87 has taken a fork 🍴
+306      87 is eating {🍝 0} 
+307      113 is thinking 🤔
+307      113 has taken a fork 🍴
+307      113 has taken a fork 🍴
+307      113 is eating {🍝 0} 
+308      158 is thinking 🤔
+308      158 has taken a fork 🍴
+308      158 has taken a fork 🍴
+308      158 is eating {🍝 0} 
+308      35 is thinking 🤔
+309      177 is thinking 🤔
+309      120 is thinking 🤔
+309      120 has taken a fork 🍴
+310      120 has taken a fork 🍴
+310      120 is eating {🍝 0} 
+310      152 is thinking 🤔
+311      5 is thinking 🤔
+311      5 has taken a fork 🍴
+311      26 is thinking 🤔
+311      5 has taken a fork 🍴
+311      26 has taken a fork 🍴
+311      5 is eating {🍝 0} 
+311      26 has taken a fork 🍴
+311      147 is thinking 🤔
+311      147 has taken a fork 🍴
+311      147 has taken a fork 🍴
+312      47 is thinking 🤔
+312      47 has taken a fork 🍴
+312      47 has taken a fork 🍴
+312      47 is eating {🍝 0} 
+312      161 is thinking 🤔
+313      161 has taken a fork 🍴
+313      68 is thinking 🤔
+313      68 has taken a fork 🍴
+313      68 has taken a fork 🍴
+313      74 is thinking 🤔
+313      74 has taken a fork 🍴
+313      74 has taken a fork 🍴
+313      74 is eating {🍝 0} 
+313      64 is thinking 🤔
+313      64 has taken a fork 🍴
+313      64 has taken a fork 🍴
+313      64 is eating {🍝 0} 
+313      141 is thinking 🤔
+314      141 has taken a fork 🍴
+314      141 has taken a fork 🍴
+314      141 is eating {🍝 0} 
+314      191 is thinking 🤔
+314      191 has taken a fork 🍴
+314      191 has taken a fork 🍴
+314      191 is eating {🍝 0} 
+314      73 is thinking 🤔
+314      125 is thinking 🤔
+314      90 is thinking 🤔
+314      90 has taken a fork 🍴
+314      90 has taken a fork 🍴
+314      90 is eating {🍝 0} 
+315      119 is thinking 🤔
+315      173 is thinking 🤔
+315      173 has taken a fork 🍴
+315      173 has taken a fork 🍴
+316      133 is thinking 🤔
+316      133 has taken a fork 🍴
+316      133 has taken a fork 🍴
+316      133 is eating {🍝 0} 
+316      169 is thinking 🤔
+316      169 has taken a fork 🍴
+316      169 has taken a fork 🍴
+316      169 is eating {🍝 0} 
+316      166 is thinking 🤔
+316      166 has taken a fork 🍴
+316      166 has taken a fork 🍴
+316      166 is eating {🍝 0} 
+316      21 is thinking 🤔
+316      21 has taken a fork 🍴
+316      130 is thinking 🤔
+316      4 is thinking 🤔
+316      4 has taken a fork 🍴
+316      4 has taken a fork 🍴
+317      4 is eating {🍝 0} 
+317      146 is thinking 🤔
+317      146 has taken a fork 🍴
+317      146 has taken a fork 🍴
+317      146 is eating {🍝 0} 
+317      35 has taken a fork 🍴
+317      111 is thinking 🤔
+317      177 has taken a fork 🍴
+317      111 has taken a fork 🍴
+317      177 has taken a fork 🍴
+317      193 is thinking 🤔
+317      177 is eating {🍝 0} 
+317      153 is thinking 🤔
+318      153 has taken a fork 🍴
+318      153 has taken a fork 🍴
+318      153 is eating {🍝 0} 
+318      25 is thinking 🤔
+318      25 has taken a fork 🍴
+318      25 has taken a fork 🍴
+318      145 is thinking 🤔
+318      145 has taken a fork 🍴
+318      145 has taken a fork 🍴
+318      145 is eating {🍝 0} 
+318      107 is thinking 🤔
+318      1 is thinking 🤔
+318      17 is thinking 🤔
+318      77 is thinking 🤔
+318      108 is thinking 🤔
+318      108 has taken a fork 🍴
+318      41 is thinking 🤔
+318      86 is thinking 🤔
+318      137 is thinking 🤔
+318      26 is eating {🍝 0} 
+318      41 has taken a fork 🍴
+319      41 has taken a fork 🍴
+319      41 is eating {🍝 0} 
+319      71 is thinking 🤔
+319      71 has taken a fork 🍴
+319      71 has taken a fork 🍴
+319      71 is eating {🍝 0} 
+319      106 is thinking 🤔
+319      106 has taken a fork 🍴
+319      106 has taken a fork 🍴
+319      183 is thinking 🤔
+319      183 has taken a fork 🍴
+319      183 has taken a fork 🍴
+319      183 is eating {🍝 0} 
+319      106 is eating {🍝 0} 
+319      95 is thinking 🤔
+319      95 has taken a fork 🍴
+320      95 has taken a fork 🍴
+320      95 is eating {🍝 0} 
+320      161 has taken a fork 🍴
+320      161 is eating {🍝 0} 
+320      15 is thinking 🤔
+320      15 has taken a fork 🍴
+320      15 has taken a fork 🍴
+320      15 is eating {🍝 0} 
+320      28 is thinking 🤔
+320      54 is thinking 🤔
+320      54 has taken a fork 🍴
+321      54 has taken a fork 🍴
+321      80 is thinking 🤔
+321      80 has taken a fork 🍴
+321      80 has taken a fork 🍴
+321      80 is eating {🍝 0} 
+321 35 is died
+^C
+➜  philo git:(main) ✗ ./philo 200 310 200 90
 
-
-the time to think is 60 but philo 3 ignore it
-
-802      3 is thinking 🤔
-803      1 is sleeping 😴
-803      2 has taken a fork 🍴
-803      2 has taken a fork 🍴
-803      2 is eating {🍝 0} 
-803      3 has taken a fork 🍴

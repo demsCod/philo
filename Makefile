@@ -2,7 +2,7 @@ NAME = philo
 
 CC = cc 
 
-FLAGS = -Wall -Werror -Wextra -g3 -fsanitize=thread
+FLAGS = -Wall -Werror -Wextra -g3 
 
 
 LIBFTPATH = ./libft 
