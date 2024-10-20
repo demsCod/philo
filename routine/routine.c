@@ -6,7 +6,7 @@
 /*   By: mdembele <mdembele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 23:17:18 by mdembele          #+#    #+#             */
-/*   Updated: 2024/10/21 00:36:28 by mdembele         ###   ########.fr       */
+/*   Updated: 2024/10/21 00:40:24 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,15 @@ void	*begin_routine(void *phi)
 	return (NULL);
 }
 
+void print_death (t_table *table, t_philo *philo_list)
+{
+	my_mutex_function(LOCK, &table->mutex_printf);
+	printf("\033[0;31m%ld      %i die\033[0m\n", get_time_in_ms()
+			- table->time, philo_list->index);
+	my_mutex_function(UNLOCK, &table->mutex_printf);
+	my_mutex_function(UNLOCK, &philo_list->ph_mutex);
+}
+
 int checking_round(t_table *table, t_philo *philo_list, int i)
 {
 	if (table->extra_args)
@@ -86,11 +95,7 @@ int checking_round(t_table *table, t_philo *philo_list, int i)
 	if (is_philo_die(philo_list))
 	{
 		set_bool(&table->mutex_checking, &table->end, true);
-		my_mutex_function(LOCK, &table->mutex_printf);
-		printf("\033[0;31m%ld      %i die\033[0m\n", get_time_in_ms()
-			- table->time, philo_list->index);
-		my_mutex_function(UNLOCK, &table->mutex_printf);
-		my_mutex_function(UNLOCK, &philo_list->ph_mutex);
+		print_death(table, philo_list);
 		return (1);
 	}
 	return (0);
