@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdembele <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mdembele <mdembele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:37:13 by mdembele          #+#    #+#             */
-/*   Updated: 2024/05/17 15:48:33 by mdembele         ###   ########.fr       */
+/*   Updated: 2024/10/20 19:12:27 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int	ft_atoi(char *str)
+long	ft_atoi(char *str)
 {
-	int	signe;
-	int	nombre;
-	int	i;
+	long	signe;
+	long	nombre;
+	long	i;
 
 	signe = 1;
 	i = 0;

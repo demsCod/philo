@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdembele <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mdembele <mdembele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 18:00:40 by mdembele          #+#    #+#             */
-/*   Updated: 2024/05/19 20:04:03 by mdembele         ###   ########.fr       */
+/*   Updated: 2024/10/20 22:36:42 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef LIBFT_H
 # define LIBFT_H
-#include <stddef.h>
+# include <stddef.h>
+
 typedef struct s_list
 {
 	void			*content;
@@ -21,7 +21,7 @@ typedef struct s_list
 }					t_list;
 
 int					ft_lstsize(t_list *lst);
-int					ft_atoi(char *str);
+long				ft_atoi(char *str);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);

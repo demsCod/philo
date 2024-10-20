@@ -2,7 +2,7 @@ NAME = philo
 
 CC = cc 
 
-FLAGS = -Wall -Werror -Wextra -g3 
+FLAGS = -Wall -Werror -Wextra  -g3 # -fsanitize=thread
 
 
 LIBFTPATH = ./libft 
@@ -15,6 +15,7 @@ FILES = philosopher.c \
 		routine/philo_utils2.c \
 		routine/routine_utils.c \
 		routine/times_utils.c \
+		free_erro/free_and_exit.c \
 
 
 OBJ = $(FILES:.c=.o)
