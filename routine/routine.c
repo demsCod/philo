@@ -48,15 +48,24 @@ void *check_monitor(t_table *table)
 {
     philo  *philo_list;
 
+    long i;
+
+    i = table->number_of_philo;
     wait_is_ready(&table->mutex_ready, &table->ready);
     philo_list = table->philo;
     while (1)
     {
-        if (get_bool(&table->mutex_meal_count, &philo_list->full))
-		{
-            my_mutex_function(LOCK, &table->mutex_ready);
-            philo_list = philo_list->next;
-		    my_mutex_function(UNLOCK, &table->mutex_ready);
+        if (table->extra_args)
+        {
+            if (get_bool(&table->mutex_meal_count, &philo_list->full))
+            {
+                i--;
+                if (i == 0)
+                    return NULL;
+                my_mutex_function(LOCK, &table->mutex_ready);
+                philo_list = philo_list->next;
+                my_mutex_function(UNLOCK, &table->mutex_ready);
+            }
         }
         else
         {
@@ -65,10 +74,11 @@ void *check_monitor(t_table *table)
                 set_bool(&philo_list->ph_mutex, &philo_list->died , true);
                 set_bool(&table->mutex_checking, &table->end , true);
                 my_mutex_function(LOCK, &table->mutex_printf);
-                printf("%ld      %i is died 💀\n", get_time_in_ms() - table->time, philo_list->index);
+                printf("\033[0;31m%ld      %i is died \033[0m\n", get_time_in_ms() - table->time, philo_list->index);
                 my_mutex_function(UNLOCK, &table->mutex_printf);
                 return NULL;
             }
+            i = table->number_of_philo;
             my_mutex_function(LOCK, &table->mutex_ready);
             philo_list = philo_list->next;
             my_mutex_function(UNLOCK, &table->mutex_ready);

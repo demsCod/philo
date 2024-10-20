@@ -15,29 +15,29 @@ void philo_print(t_mtx *mtx, philo *phil, int action)
     if (action ==  TAKE_FORK)
     {
 	    time = get_time_in_ms() - phil->table_info->time;
-        printf("%ld      %d has taken a fork 🍴\n", time,  phil->index);// 🍴
+        printf("%ld      %d has taken a fork\n", time,  phil->index);// 🍴
         my_mutex_function(UNLOCK, mtx);
         return;
     }
     else if (action ==  EAT)
     {
 	    time = get_time_in_ms() - phil->table_info->time;
-        printf("%ld      %d is eating {🍝 %ld} \n", time,  phil->index, phil->eat_counters);//  🍝
         i = get_long(&phil->mutex_meal_count, &phil->eat_counters);
         ++i;
+        printf(BOLDGREEN "%ld      %d is eating\n" RESET, time,  phil->index);//  🍝
         set_long(&phil->mutex_meal_count, &phil->eat_counters, i);
-        if (i >= get_long(&phil->table_info->mutex_meal_count, &phil->table_info->limit_eat))
+        if (phil->table_info->extra_args && i >= get_long(&phil->table_info->mutex_meal_count, &phil->table_info->limit_eat))
             set_bool(&phil->mutex_meal_count, &phil->full, true);
     }
     else if (action == SLEEP)
     {
 	    time = get_time_in_ms() - phil->table_info->time;
-        printf("%ld      %d is sleeping 😴\n", time,  phil->index);// 😴
+        printf(MAGENTA"%ld      %d is sleeping\n"RESET, time,  phil->index);// 😴
     }
     else if (action == THINK)
     {
 	    time = get_time_in_ms() - phil->table_info->time;
-        printf("%ld      %d is thinking 🤔\n", time,  phil->index);// 🤔
+        printf(CYAN"%ld      %d is thinking\n"RESET, time,  phil->index);// 🤔
     }
     my_mutex_function(UNLOCK, mtx);
 }
