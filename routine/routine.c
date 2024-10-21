@@ -12,83 +12,19 @@
 
 #include "../philo.h"
 
-void	wait_is_ready(t_mtx *mtx, bool *ready)
-{
-	while (get_bool(mtx, ready) == false)
-		;
-}
-void eat_left(t_philo *philosophe)
-{
-	take_fork(philosophe, &philosophe->fork);
-	take_fork(philosophe, &philosophe->next->fork);
-	philo_action(philosophe, EAT);
-	my_mutex_function(UNLOCK, &philosophe->fork);
-	my_mutex_function(UNLOCK, &philosophe->next->fork);
-}
-
-void eat_right(t_philo *philosophe)
-{
-	take_fork(philosophe, &philosophe->next->fork);
-	take_fork(philosophe, &philosophe->fork);
-	philo_action(philosophe, EAT);
-	my_mutex_function(UNLOCK, &philosophe->next->fork);
-	my_mutex_function(UNLOCK, &philosophe->fork);
-}
-
-void	*begin_routine(void *phi)
-{
-	t_philo	*philosophe;
-
-	philosophe = (t_philo *)phi;
-	wait_is_ready(&philosophe->table_info->mutex_ready,
-		&philosophe->table_info->ready);
-	set_long(&philosophe->mutex_meal_time, &philosophe->last_eat, 0);
-	de_synchronize_philo(philosophe);
-	while (1)
-	{
-		if (get_bool(&philosophe->table_info->mutex_meal_count,
-				&philosophe->full))
-			break ;
-		if (get_bool(&philosophe->ph_mutex, &philosophe->died))
-			break ;
-		if (get_bool(&philosophe->table_info->mutex_checking,
-				&philosophe->table_info->end))
-			break ;
-		if (philosophe->index % 2 == 0)
-			eat_left(philosophe);
-		else
-			eat_right(philosophe);
-		philo_action(philosophe, SLEEP);
-		philo_action(philosophe, THINK);
-	}
-	return (NULL);
-}
-
-void print_death (t_table *table, t_philo *philo_list)
-{
-	my_mutex_function(LOCK, &table->mutex_printf);
-	printf("\033[0;31m%ld      %i die\033[0m\n", get_time_in_ms()
-			- table->time, philo_list->index);
-	my_mutex_function(UNLOCK, &table->mutex_printf);
-	my_mutex_function(UNLOCK, &philo_list->ph_mutex);
-}
-
 int checking_round(t_table *table, t_philo *philo_list, int i)
 {
 	if (table->extra_args)
 	{
 		if (get_bool(&philo_list->mutex_meal_count, &philo_list->full))
 		{
-			if (i-- == 0)
+			if (i == 0)
 			{
 				set_bool(&table->mutex_checking, &table->end, true);
 				my_mutex_function(UNLOCK, &philo_list->ph_mutex);
 				return (1);
 			}
 			my_mutex_function(UNLOCK, &philo_list->ph_mutex);
-			my_mutex_function(LOCK, &table->mutex_ready);
-			philo_list = philo_list->next;
-			my_mutex_function(UNLOCK, &table->mutex_ready);
 			return (8);
 		}
 	}
@@ -101,42 +37,46 @@ int checking_round(t_table *table, t_philo *philo_list, int i)
 	return (0);
 }
 
-void	*check_monitor(t_table *table)
+void *check_monitor(t_table *table)
 {
-	t_philo	*philo_list;
-	int	i;
-	int check;
-	
-	i = table->number_of_philo;
-	wait_is_ready(&table->mutex_ready, &table->ready);
-	philo_list = table->philo;
-	while (1)
-	{
-		if (get_bool(&table->mutex_checking, &table->end))
-			return NULL;
-		my_mutex_function(LOCK, &philo_list->ph_mutex);
-		check = checking_round(table, philo_list, i--);
-		if (check == 8)
-			continue;
-		if (check == 1)
-			return (NULL);
-		my_mutex_function(UNLOCK, &philo_list->ph_mutex);
-		i = table->number_of_philo;
-		my_mutex_function(LOCK, &table->mutex_ready);
-		philo_list = philo_list->next;
-		my_mutex_function(UNLOCK, &table->mutex_ready);
-		ft_usleep(10, philo_list, false);
-	}
+    t_philo *philo_list;
+    int i;
+
+    i = table->number_of_philo;
+    wait_is_ready(&table->mutex_ready, &table->ready);
+    philo_list = table->philo;
+    while (1)
+    {
+        if (get_bool(&table->mutex_checking, &table->end))
+            return NULL;
+        if (check_monitor_helper(table, &philo_list, &i) == 1)
+            return NULL;
+        ft_usleep(10, philo_list, false);
+    }
 }
 
-void init_routine(t_table *table)
+int check_monitor_helper(t_table *table, t_philo **philo_list, int *i)
 {
-	my_mutex_function(INIT, &table->mutex_checking);
-	my_mutex_function(INIT, &table->mutex_printf);
-	my_mutex_function(INIT, &table->mutex_meal_count);
-	my_mutex_function(INIT, &table->mutex_calcul_think_time);
-	my_mutex_function(INIT, &table->mutex_dead);
-	my_mutex_function(INIT, &table->mutex_ready);
+    int check;
+
+    my_mutex_function(LOCK, &(*philo_list)->ph_mutex);
+    check = checking_round(table, *philo_list, *i);
+    if (check == 8)
+    {
+        (*i)--;
+        my_mutex_function(LOCK, &table->mutex_ready);
+        *philo_list = (*philo_list)->next;
+        my_mutex_function(UNLOCK, &table->mutex_ready);
+        return (0);
+    }
+    if (check == 1)
+        return (1);
+    my_mutex_function(UNLOCK, &(*philo_list)->ph_mutex);
+    *i = table->number_of_philo;
+    my_mutex_function(LOCK, &table->mutex_ready);
+    *philo_list = (*philo_list)->next;
+    my_mutex_function(UNLOCK, &table->mutex_ready);
+    return (0);
 }
 
 void create_thread(int number_philo, t_philo *philo, pthread_t *thread_for_phil)
@@ -177,7 +117,7 @@ int	routine_philo(t_philo **philo_list)
 	pthread_mutex_unlock(&table->mutex_ready);
 	check_monitor(table);
 	j = 0;
-	while (j < philo->number_of_philo )
+	while(j < philo->number_of_philo )
 		pthread_join(thread_for_phil[j++], NULL);
 	free(thread_for_phil);
 	return (0);

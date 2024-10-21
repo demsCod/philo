@@ -117,5 +117,14 @@ void					ft_think(t_philo *philosophe, bool start);
 int						ft_usleep(size_t milliseconds, t_philo *phil,
 							bool thread);
 void					free_and_exit(t_table *full_data);
+void					*begin_routine(void *phi);
+int 					check_monitor_helper(t_table *table, t_philo **philo_list, int *i);
+void					wait_is_ready(t_mtx *mtx, bool *ready);
+void 					eat_left(t_philo *philosophe);
+void 					eat_right(t_philo *philosophe);
+void 					print_death (t_table *table, t_philo *philo_list);
+void 					init_routine(t_table *table);
+
+
 
 #endif

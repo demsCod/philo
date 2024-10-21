@@ -67,3 +67,32 @@ void	take_fork(t_philo *phil, t_mtx *mtx)
 	my_mutex_function(LOCK, mtx);
 	philo_action(phil, TAKE_FORK);
 }
+
+void	*begin_routine(void *phi)
+{
+	t_philo	*philosophe;
+
+	philosophe = (t_philo *)phi;
+	wait_is_ready(&philosophe->table_info->mutex_ready,
+		&philosophe->table_info->ready);
+	set_long(&philosophe->mutex_meal_time, &philosophe->last_eat, 0);
+	de_synchronize_philo(philosophe);
+	while (1)
+	{
+		if (get_bool(&philosophe->table_info->mutex_meal_count,
+				&philosophe->full))
+			break ;
+		if (get_bool(&philosophe->ph_mutex, &philosophe->died))
+			break ;
+		if (get_bool(&philosophe->table_info->mutex_checking,
+				&philosophe->table_info->end))
+			break ;
+		if (philosophe->index % 2 == 0)
+			eat_left(philosophe);
+		else
+			eat_right(philosophe);
+		philo_action(philosophe, SLEEP);
+		philo_action(philosophe, THINK);
+	}
+	return (NULL);
+}

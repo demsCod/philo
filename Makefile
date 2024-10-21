@@ -16,6 +16,7 @@ FILES = philosopher.c \
 		routine/routine_utils.c \
 		routine/times_utils.c \
 		free_erro/free_and_exit.c \
+		routine/routine_utils2.c \
 
 
 OBJ = $(FILES:.c=.o)

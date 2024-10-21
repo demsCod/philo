@@ -23,7 +23,7 @@ void	ft_print_eat(t_philo *phil)
 	printf(BOLDGREEN "%ld      %d is eating\n" RESET, time, phil->index);
 	set_long(&phil->mutex_meal_count, &phil->eat_counters, i);
 	if (phil->table_info->extra_args
-		&& i >= get_long(&phil->table_info->mutex_meal_count,
+		&& i == get_long(&phil->table_info->mutex_meal_count,
 			&phil->table_info->limit_eat))
 		set_bool(&phil->mutex_meal_count, &phil->full, true);
 }
@@ -46,13 +46,12 @@ void	philo_print(t_mtx *mtx, t_philo *phil, int action)
 	else if (action == SLEEP)
 	{
 		time = get_time_in_ms() - phil->table_info->time;
-		printf(MAGENTA "%ld      %d is sleeping\n" RESET, time, phil->index);
+		printf("%ld      %d is sleeping\n", time, phil->index);
 	}
 	else if (action == THINK)
 	{
 		time = get_time_in_ms() - phil->table_info->time;
-		printf(CYAN "%ld      %d is thinking\n" RESET, time, phil->index);
+		printf("%ld      %d is thinking\n", time, phil->index);
 	}
 	my_mutex_function(UNLOCK, mtx);
 }
-
