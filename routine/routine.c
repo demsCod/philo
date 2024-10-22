@@ -122,3 +122,4 @@ int	routine_philo(t_philo **philo_list)
 	free(thread_for_phil);
 	return (0);
 }
+
