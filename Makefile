@@ -2,7 +2,7 @@ NAME = philo
 
 CC = cc 
 
-FLAGS = -Wall -Werror -Wextra  -g3 # -fsanitize=thread
+FLAGS = -Wall -Werror -Wextra -g3
 
 
 LIBFTPATH = ./libft 
@@ -17,6 +17,7 @@ FILES = philosopher.c \
 		routine/times_utils.c \
 		free_erro/free_and_exit.c \
 		routine/routine_utils2.c \
+		routine/philo_utils3.c \
 
 
 OBJ = $(FILES:.c=.o)
@@ -39,7 +40,7 @@ clean :
 
 fclean : clean
 			@make fclean -C $(LIBFTPATH)
-			@rm $(NAME)
+			@rm -rf $(NAME)
 			@echo "$(RED)remove $(NAME) 🚮$(END)"
 
 re:	fclean all

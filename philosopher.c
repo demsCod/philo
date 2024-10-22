@@ -6,7 +6,7 @@
 /*   By: mdembele <mdembele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:02:16 by mdembele          #+#    #+#             */
-/*   Updated: 2024/10/20 23:13:00 by mdembele         ###   ########.fr       */
+/*   Updated: 2024/10/22 21:56:59 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	check_valids_args(char **av, int ac)
 		check = ft_atoi(av[0]);
 		if (check > 200 || check <= 0)
 		{
-			ft_putendl_fd("Error", 2);
+			ft_putendl_fd("Eror", 2);
 			return (1);
 		}
 	}
@@ -111,6 +111,12 @@ int	main(int ac, char **av)
 			return (1);
 		if (parse_data(av + 1, &philo, ac) == 1)
 			return (1);
+		if (philo->table_info->number_of_philo == 1)
+		{
+			hardcode_philo(philo);
+			free_and_exit(philo->table_info);
+			return (0);
+		}
 		if (routine_philo(&philo) == 1)
 			return (1);
 		free_and_exit(philo->table_info);

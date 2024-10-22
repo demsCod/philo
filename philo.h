@@ -6,7 +6,7 @@
 /*   By: mdembele <mdembele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:27:24 by mdembele          #+#    #+#             */
-/*   Updated: 2024/10/20 23:21:26 by mdembele         ###   ########.fr       */
+/*   Updated: 2024/10/22 21:51:57 by mdembele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,13 +118,13 @@ int						ft_usleep(size_t milliseconds, t_philo *phil,
 							bool thread);
 void					free_and_exit(t_table *full_data);
 void					*begin_routine(void *phi);
-int 					check_monitor_helper(t_table *table, t_philo **philo_list, int *i);
+int						check_monitor_helper(t_table *table,
+							t_philo **philo_list, int *i);
 void					wait_is_ready(t_mtx *mtx, bool *ready);
-void 					eat_left(t_philo *philosophe);
-void 					eat_right(t_philo *philosophe);
-void 					print_death (t_table *table, t_philo *philo_list);
-void 					init_routine(t_table *table);
-
-
+void					eat_left(t_philo *philosophe);
+void					eat_right(t_philo *philosophe);
+void					print_death(t_table *table, t_philo *philo_list);
+void					init_routine(t_table *table);
+void					hardcode_philo(t_philo *philo);
 
 #endif
